@@ -6,8 +6,16 @@ export default class Calendar extends Component {
         const {name} = this.props;
 
         return (
-            <div>
+            <div style={{
+                background:"#ffffff",
+                color:"#1A051D",
+                textAlign:"center"
+                //8CA5BA
+            }}>
+                {/* For year % month (Ex) : 2019 October */}
                 I am {name} calendar
+                {/* For week (Ex) : mon / tue~~ */}
+                
             </div>
         )
     }

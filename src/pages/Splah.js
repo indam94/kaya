@@ -20,7 +20,7 @@ class Splash extends Component{
 
     render(){
         if(this.state.redirect){
-            return (<Redirect to = "/calendars"/>)
+            return (<Redirect to = "/main"/>)
         }
         return(
             <div className='splash_img'>
