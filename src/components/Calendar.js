@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 
 export default class Calendar extends Component {
+
     render() {
 
         const {name} = this.props;
 
         return (
+            <>
             <div style={{
                 background:"#ffffff",
                 color:"#1A051D",
@@ -15,8 +17,9 @@ export default class Calendar extends Component {
                 {/* For year % month (Ex) : 2019 October */}
                 I am {name} calendar
                 {/* For week (Ex) : mon / tue~~ */}
-                
             </div>
+            <div style={{height:"100px"}}></div>
+            </>
         )
     }
 }
