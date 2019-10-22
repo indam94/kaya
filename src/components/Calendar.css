@@ -65,6 +65,11 @@ tr{
     color: #2D8B57;
 }
 
+.current-day-border{
+    border: 2px solid #2D8B57;
+    border-radius: 50%;
+}
+
 .month_popup{
     position: absolute;
     padding: 5px;

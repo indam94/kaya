@@ -70,9 +70,12 @@ export default class Calendar extends Component {
         let daysInMonth = [];
         for(let d = 1; d <= this.daysInMonth(); d++){
             let className = (d == this.currentDay() ? "day current-day" : "day")
+            let classNameDiv = (d == this.currentDay() ? "current-day-border" : "")
             daysInMonth.push(
                 <td key={d} className={className} >
-                    <span>{d}</span>
+                    <div className={classNameDiv}>
+                        <span>{d}</span>
+                    </div>
                 </td>
             )
         }
