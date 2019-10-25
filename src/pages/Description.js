@@ -14,6 +14,10 @@ function Description(props) {
         checkedAgree: false
     })
 
+    const handleInstruct = props.handleInstruct
+
+    // console.log(handleInstruct)
+
     const handleChange = event => {
         if (event.target.value === "I agree") {
             setChecked({checkedAgree:true})
@@ -72,7 +76,7 @@ function Description(props) {
                 {checked.checkedAgree === true ? 
                 
                 <Link   to = "/login" 
-                        //onClick={instruct("d")}
+                        onClick={()=>handleInstruct("Please Enter Your ID & Password")}
                 >
                 {/* ('Please Enter Your ID & Password') */}
                 <CustomButton   className="mb-2" 

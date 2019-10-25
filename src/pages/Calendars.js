@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 import Calendar from '../components/Calendar'
-
-// function getCurrentDate(){
-
-// }
 
 export default class Calendars extends Component {
 
@@ -12,6 +9,9 @@ export default class Calendars extends Component {
         this.state = {
             // curYear: THIS_YEAR,
             // curMonth: THIS_MONTH
+            pre: moment().subtract(1, 'month'),
+            cur: moment(),
+            fut: moment().add(1, 'month'),
         }
     }
 
@@ -19,14 +19,9 @@ export default class Calendars extends Component {
         return (
             <div>
                 I am Calendars!!!
-                <Calendar name="pre" />
-                <Calendar   name="cur" 
-                            style={{
-                                position: "relative",
-                                width: "100%"
-                            }} 
-                />
-                <Calendar name="fut" />
+                <Calendar dateContext={this.state.pre} />
+                <Calendar dateContext={this.state.cur}/>
+                <Calendar dateContext={this.state.fut} />
             </div>
         )
     }

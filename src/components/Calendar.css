@@ -5,7 +5,10 @@ td,
 tr{
     padding: 0;
     margin: 0;
-    width: 14.2%;
+}
+
+td{
+    width: 14.2vw;
 }
 
 .calendar-container{
@@ -33,52 +36,48 @@ tr{
     padding-left: 5px;
 }
 
-.day,
+/* .day,
 .empty-slot,
 .week-day{
     text-align: center;
-    height: 40px;
-}
+} */
 
 .week-day{
     font-size: 0.8em;
     background-color: #ffffff;
     color: #8CA5BA;
-}
-
-.day{
-    font-size: 0.8em;
+    height: 25px;
 }
 
 .day{
     cursor: pointer;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
+    font-size: 0.8em;
 }
 
 .current-day{
-    /* background-color: #4285f4; */
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
+    /* line-height: 28px; */
     color: #2D8B57;
 }
 
 .current-day-border{
+    height: 14.2vw;
+    max-height: 71px;
     border: 2px solid #2D8B57;
     border-radius: 50%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.month_popup{
-    position: absolute;
-    padding: 5px;
-    background: #ffffff;
-    border: 2px solid skyblue;
-}
+.day-border{
+    height: 14.2vw;
+    max-height: 71px;
 
-.month_popup div{
-    padding: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-month{
@@ -88,14 +87,6 @@ tr{
     right: 3px;
 }
 
-.prev{
-
-}
-
-.next{
-
-}
-
 .editor-year{
     max-width: 3.6em;
 }
@@ -103,4 +94,5 @@ tr{
 .label-month,
 .label-year{
     font-size: 0.6em;
+    font-weight: 500;
 }

@@ -4,19 +4,20 @@ import './Calendar.css'
 
 export default class Calendar extends Component {
 
-    state = {
-        dateConext: moment(),
-        today: moment(),
-        showMonthPopup: false,
-        showYearPopup: false
-    }
-
     constructor(props){
         super(props);
 
         this.width = props.width || "100%";
         this.style = props.style || {};
         this.style.width = this.width;
+
+        this.state = {
+            dateContext: props.dateContext,
+            today: moment(),
+            showMonthPopup: false,
+            showYearPopup: false
+        }   
+
     }
 
     weekdays = moment.weekdays();
@@ -24,23 +25,23 @@ export default class Calendar extends Component {
     months = moment.months();
 
     year = () => {
-        return this.state.dateConext.format("Y");
+        return this.state.dateContext.format("Y");
     }
     month = () => {
-        return this.state.dateConext.format("MMMM");
+        return this.state.dateContext.format("MMMM");
     }
     daysInMonth = () => {
-        return this.state.dateConext.daysInMonth();
+        return this.state.dateContext.daysInMonth();
     }
     currentDate = () => {
-        return this.state.dateConext.get("date");
+        return this.state.dateContext.get("date");
     }
     currentDay = () => {
-        return this.state.dateConext.format("D");
+        return this.state.dateContext.format("D");
     }
 
     firstDayOfMonth = () => {
-        let dateContext = this.state.dateConext;
+        let dateContext = this.state.dateContext;
         let firstDay = moment(dateContext).startOf('month').format('d');
 
         return firstDay
@@ -69,12 +70,14 @@ export default class Calendar extends Component {
 
         let daysInMonth = [];
         for(let d = 1; d <= this.daysInMonth(); d++){
-            let className = (d == this.currentDay() ? "day current-day" : "day")
-            let classNameDiv = (d == this.currentDay() ? "current-day-border" : "")
+            let className = ( (d == this.currentDay() && this.month() == moment().format("MMMM")) ? "day current-day" : "day")
+            let classNameDiv = ((d == this.currentDay() && this.month() == moment().format("MMMM"))  ? "current-day-border" : "day-border")
             daysInMonth.push(
                 <td key={d} className={className} >
+                    <div className="helper">
                     <div className={classNameDiv}>
                         <span>{d}</span>
+                    </div>
                     </div>
                 </td>
             )

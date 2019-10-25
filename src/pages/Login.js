@@ -12,6 +12,13 @@ export default class Login extends Component {
         };
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+
+        console.log(this.props.handleInstruct)
+        //this.props.handleInstruct("a")
+    }
+
+    componentDidMount(){
+        
     }
 
     onChange(e) {
@@ -40,6 +47,7 @@ export default class Login extends Component {
     render() {
         return (
             <>
+                <br/><br/><br/>
                 <div className="container">
                 <div className="row">
                 <div className="col-md-8 mt-2 mx-auto">
