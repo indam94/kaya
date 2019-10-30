@@ -132,18 +132,20 @@ export default class App extends Component {
         />
 
         <Route  path = "/login" 
-                component = {()=><Login handleInstruct = {()=>this.handleInstruct}
+                component = {()=><Login handleInstruct = {this.handleInstruct}
                                         instruct="Regular login and password screen"/>}
 
         />
 
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
+                                      handleInstruct = {()=>this.handleInstruct}
                                       type = {this.state.type}/>}
         />
 
         <Route  path = {`/app_store/:${this.state.type}`} 
-                component={()=><Store handleInstall={this.handleInstall} 
+                component={()=><Store handleInstall={this.handleInstall}
+                                      handleInstruct = {()=>this.handleInstruct}
                                       type = {this.state.type} 
                                       isInstalled = {this.state.isInstalled} 
                                 />}

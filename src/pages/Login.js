@@ -17,10 +17,6 @@ export default class Login extends Component {
         //this.props.handleInstruct("a")
     }
 
-    componentDidMount(){
-        
-    }
-
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
     }
@@ -85,7 +81,10 @@ export default class Login extends Component {
                     </button>
                     <br/>
                 
-                    <Link to = '/ios_backgroud' className='btn btn-success text-capitalize'>
+                    <Link   to = '/ios_backgroud' 
+                            className='btn btn-success text-capitalize'
+                            onClick={()=>this.props.handleInstruct("Please access the app store by clicking on the [App Store] icon.")}
+                            >
                         skip
                     </Link>
                     

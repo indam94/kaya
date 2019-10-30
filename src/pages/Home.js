@@ -31,6 +31,7 @@ class Home extends Component {
               type: this.props.type,
               isInstalled: this.props.isInstalled,
             }}
+            onClick={()=>this.props.handleInstruct("Please, read the whole description and install the app.")}
       >
       <IconButton img={AppStore} name="App Store"></IconButton>
       </Link>
@@ -41,7 +42,10 @@ class Home extends Component {
       {/* Sample Icon3 */}
       <IconButton img={Settings} name="Settings"></IconButton>
       {this.props.isInstalled ? 
-        <Link to="/splash" className = 'icon'>
+        <Link to="/splash" 
+              className = 'icon'
+              onClick={()=>this.props.handleInstruct("Please, open the app by clicking on the Kaya icon [Kaya].")}
+              >
           <IconButton img={Kaya} name="KAYA" /> }
         </Link>
         : 

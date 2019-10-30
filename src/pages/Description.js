@@ -87,7 +87,9 @@ function Description(props) {
                 </CustomButton>
                 </Link> 
                 :
-                <Link to = "/disagree">
+                <Link   to = "/disagree"
+                        onClick={()=>handleInstruct("Thank you for your time. If you change your mind and decide to participate, please feel free to return to the study.")}
+                >
                                 
                 <CustomButton   className="mb-2" 
                                 variant="contained" 
