@@ -20,7 +20,9 @@ class Splash extends Component{
 
     render(){
         if(this.state.redirect){
-            return (<Redirect to = "/main"/>)
+            return (<Redirect   to = "/main"
+                                onCreate={()=>this.props.handleInstruct("This is the calendar screen. Please, click on today's date.")}
+            />)
         }
         return(
             <div className='splash_img'>

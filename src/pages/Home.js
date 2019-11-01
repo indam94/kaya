@@ -44,12 +44,12 @@ class Home extends Component {
       {this.props.isInstalled ? 
         <Link to="/splash" 
               className = 'icon'
-              onClick={()=>this.props.handleInstruct("Please, open the app by clicking on the Kaya icon [Kaya].")}
-              >
-          <IconButton img={Kaya} name="KAYA" /> }
+              onClick={()=>this.props.handleInstruct("This is the calendar screen. Please, click on today's date.")}
+        >
+          <IconButton img={Kaya} name="KAYA" /> 
         </Link>
         : 
-        ''
+        <div/>
       }
       
       

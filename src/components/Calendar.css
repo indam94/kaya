@@ -59,7 +59,10 @@ td{
     color: #2D8B57;
 }
 
+
+
 .current-day-border{
+    color: #2D8B57;
     height: 14.2vw;
     max-height: 71px;
     border: 2px solid #2D8B57;
@@ -69,6 +72,12 @@ td{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.current-day-border:hover{
+    background-color: #2D8B57;
+    opacity: 0.7;
+    color:white
 }
 
 .day-border{

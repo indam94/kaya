@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import moment from 'moment'
 import './Calendar.css'
 
@@ -17,7 +18,7 @@ export default class Calendar extends Component {
             showMonthPopup: false,
             showYearPopup: false
         }   
-
+        console.log(props.handleInstruct)
     }
 
     weekdays = moment.weekdays();
@@ -75,9 +76,28 @@ export default class Calendar extends Component {
             daysInMonth.push(
                 <td key={d} className={className} >
                     <div className="helper">
+                    {(d == this.currentDay() && this.month() == moment().format("MMMM")) ? 
+                    
+                    <Link   to = "/input" 
+                            className="link"
+                            year={this.year()}
+                            month={this.month()}
+                            day={this.currentDay()}
+                    >
                     <div className={classNameDiv}>
-                        <span>{d}</span>
+                    <span>{d}</span>
                     </div>
+                    </Link>
+
+                    : 
+                    
+                    <div className={classNameDiv}>
+                    <span>{d}</span>
+                    </div>
+
+                    }
+                    
+                    
                     </div>
                 </td>
             )

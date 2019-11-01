@@ -20,6 +20,13 @@ class AppStore extends Component{
             type : props.type,
         }
         console.log(this.props)
+        this.install = this.install.bind(this)
+    }
+
+    install(){
+        //console.log(this.props)
+        this.props.handleInstall();
+        this.props.handleInstruct("Please, open the app by clicking on the Kaya icon [icon].");
     }
 
     render(){
@@ -41,7 +48,10 @@ class AppStore extends Component{
             <div className="InstallButton">
                 {/* <button onClick={()=>{this.props.handler('Click the KAYA application.')}}> */}
                 <Link   to = "/ios_backgroud" 
-                        onClick={this.props.handleInstall}>
+                        //onClick={this.props.handleInstall}
+                        onClick={this.install}
+                        // onClick={()=>this.props.handleInstruct("Please, open the app by clicking on the Kaya icon [icon].")}
+                >
                 <Install    className='install_button' 
                             variant="contained" 
                             size="small" 

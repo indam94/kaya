@@ -139,21 +139,21 @@ export default class App extends Component {
 
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
-                                      handleInstruct = {()=>this.handleInstruct}
+                                      handleInstruct = {this.handleInstruct}
                                       type = {this.state.type}/>}
         />
 
         <Route  path = {`/app_store/:${this.state.type}`} 
                 component={()=><Store handleInstall={this.handleInstall}
-                                      handleInstruct = {()=>this.handleInstruct}
+                                      handleInstruct = {this.handleInstruct}
                                       type = {this.state.type} 
                                       isInstalled = {this.state.isInstalled} 
                                 />}
         />
 
-        <Route path = "/splash" component={Splash}/>
+        <Route path = "/splash" component={()=><Splash handleInstruct = {()=>this.handleInstruct}/>}/>
         <Route path = "/disagree" component={Disagree}/>
-        <Route path = "/main" component={Main}/>
+        <Route path = "/main" component={()=><Main handleInstruct = {()=>this.handleInstruct}/>}/>
         <Route path = "/input" component={Input}/>
       </div>
     )
