@@ -5,8 +5,8 @@
     min-height: 667px;
     height: 100%;
     margin:auto;
-    border: 2px solid #B22222;
-    border-radius: 10px;
+    /* border: 2px solid #B22222;
+    border-radius: 10px; */
     position: relative;
     /* overflow: hidden; */
 }
@@ -15,11 +15,14 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+
+    z-index: 10;
 }
 
 .instruction button{
     background: transparent;
     border: none;
+
 }
 
 .instruction img{
@@ -96,4 +99,22 @@
     background: #D3E6FF;
     height: 100%;
     width:100%;
+}
+
+.decorator_left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+
+    z-index: 10;
+}
+
+.decorator_right{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+
+    z-index: 0;
 }

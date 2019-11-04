@@ -12,16 +12,22 @@ export default class Calendars extends Component {
             pre: moment().subtract(1, 'month'),
             cur: moment(),
             fut: moment().add(1, 'month'),
+            isAfter: false
         }
+    }
+
+    handleChange = () =>{
+        this.setState({
+            isAfter:true
+        })
     }
 
     render() {
         return (
             <div>
-                I am Calendars!!!
-                <Calendar dateContext={this.state.pre} />
-                <Calendar dateContext={this.state.cur}/>
-                <Calendar dateContext={this.state.fut} />
+                <Calendar dateContext={this.state.pre} isAfter={this.isAfter}/>
+                <Calendar dateContext={this.state.cur} isAfter={this.isAfter}/>
+                <Calendar dateContext={this.state.fut} isAfter={this.isAfter}/>
             </div>
         )
     }
