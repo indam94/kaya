@@ -3,6 +3,13 @@ import {Link} from 'react-router-dom'
 import moment from 'moment'
 import './Calendar.css'
 
+import Heart from '../resources/heart_icon.png'
+import Mucus from '../resources/cervical_mucus_icon.png'
+import Sad from '../resources/sad_face_icon.png'
+import Smile from '../resources/smiling_face_icon.png'
+import Symptom from '../resources/yellow_symptom_icon.png'
+import thermostat from '../resources/thermostat_icon.png'
+
 export default class Calendar extends Component {
 
     constructor(props){
@@ -16,7 +23,8 @@ export default class Calendar extends Component {
             dateContext: props.dateContext,
             today: moment(),
             showMonthPopup: false,
-            showYearPopup: false
+            showYearPopup: false,
+            isAfter: props.isAfter
         }   
         console.log(props.handleInstruct)
     }
@@ -92,7 +100,19 @@ export default class Calendar extends Component {
                     : 
                     
                     <div className={classNameDiv}>
-                    <span>{d}</span>
+                        <div>
+                            <span>{d}</span>
+                            <br/>
+                            {(d+1 == this.currentDay() && this.month() == moment().format("MMMM")) ?
+                            <img src={Heart} width="20px"></img>
+                            // <p>wow</p>
+                            :
+                            // <img></img>
+                            <p></p>
+                            }
+                        </div>
+                    
+                    
                     </div>
 
                     }

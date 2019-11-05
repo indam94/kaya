@@ -14,6 +14,8 @@ export default class Calendars extends Component {
             fut: moment().add(1, 'month'),
             isAfter: false
         }
+
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange = () =>{
