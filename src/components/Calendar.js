@@ -104,11 +104,18 @@ export default class Calendar extends Component {
                             <span>{d}</span>
                             <br/>
                             {(d+1 == this.currentDay() && this.month() == moment().format("MMMM")) ?
-                            <img src={Heart} width="20px"></img>
-                            // <p>wow</p>
+                            <img src={Heart} width="15px"></img>
+                            :null
+                            }
+                            {(d+2 == this.currentDay() && this.month() == moment().format("MMMM")) ?
+                            <img src={Mucus} width="15px"></img>
                             :
-                            // <img></img>
-                            <p></p>
+                            null
+                            }
+                            {(d+3 == this.currentDay() && this.month() == moment().format("MMMM")) ?
+                            <img src={thermostat} width="15px"></img>
+                            :
+                            null
                             }
                         </div>
                     
