@@ -24,9 +24,12 @@ export default class Calendar extends Component {
             today: moment(),
             showMonthPopup: false,
             showYearPopup: false,
-            isAfter: props.isAfter
+            isAfter: props.isAfter || false
         }   
-        console.log(props.handleInstruct)
+        // console.log(props.handleInstruct)
+        // console.log(this.state.isAfter)
+        console.log(this.props)
+        // this.handleChange = this.handleChange.bind(this)
     }
 
     weekdays = moment.weekdays();
@@ -91,9 +94,15 @@ export default class Calendar extends Component {
                             year={this.year()}
                             month={this.month()}
                             day={this.currentDay()}
+                            onClick={this.props.handleAfter}
                     >
                     <div className={classNameDiv}>
-                    <span>{d}</span>
+                        <div>
+                        <span>{d}</span>
+                        <br/>
+                        {this.state.isAfter ? <img src={thermostat} width="15px"></img> : null}
+                        </div>
+                    
                     </div>
                     </Link>
 
@@ -104,18 +113,61 @@ export default class Calendar extends Component {
                             <span>{d}</span>
                             <br/>
                             {(d+1 == this.currentDay() && this.month() == moment().format("MMMM")) ?
-                            <img src={Heart} width="15px"></img>
+                            <div>
+                                <img src={Heart} width="15px"></img>
+                                <img src={Sad} width="15px"></img>
+                            </div>
                             :null
                             }
                             {(d+2 == this.currentDay() && this.month() == moment().format("MMMM")) ?
-                            <img src={Mucus} width="15px"></img>
+                            <img src={Symptom} width="15px"></img>
                             :
                             null
                             }
-                            {(d+3 == this.currentDay() && this.month() == moment().format("MMMM")) ?
+                            {(d+7 == this.currentDay() && this.month() == moment().format("MMMM")) ?
                             <img src={thermostat} width="15px"></img>
                             :
                             null
+                            }
+
+                            {   
+                                (d + 7 < 1) ? (this.month() == moment().format("MMMM") ? 
+                                    <img src={thermostat} width="15px"></img> : null
+                                ) 
+                                :
+                                ( d == (this.daysInMonth() - (7-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
+                                    <img src={thermostat} width="15px"></img>:null
+                                )
+                            }
+
+                            {   
+                                (d + 9 < 1) ? (this.month() == moment().format("MMMM") ? 
+                                    <img src={thermostat} width="15px"></img> : null
+                                ) 
+                                :
+                                ( d == (this.daysInMonth() - (9-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
+                                    <div><img src={thermostat} width="15px"></img><img src={Heart} width="15px"></img></div>:null
+                                )
+                            }
+
+                            {   
+                                (d + 10 < 1) ? (this.month() == moment().format("MMMM") ? 
+                                    <img src={thermostat} width="15px"></img> : null
+                                ) 
+                                :
+                                ( d == (this.daysInMonth() - (10-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
+                                    <div><img src={Mucus} width="15px"></img><img src={Smile} width="15px"></img></div>:null
+                                )
+                            }
+
+                            {   
+                                (d + 11 < 1) ? (this.month() == moment().format("MMMM") ? 
+                                    <img src={Mucus} width="15px"></img> : null
+                                ) 
+                                :
+                                ( d == (this.daysInMonth() - (11-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
+                                    <img src={Mucus} width="15px"></img>:null
+                                )
                             }
                         </div>
                     

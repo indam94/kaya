@@ -33,7 +33,8 @@ export default class App extends Component {
       end : false,
       instrument:"Please Read All Description And Check Agree Or Disagress",
       isInstalled: false,
-      isOpenInstruction: false
+      isOpenInstruction: false,
+      isAfter: false
     }
 
     this.handler = this.handler.bind(this)
@@ -41,7 +42,14 @@ export default class App extends Component {
     this.handleInstruct = this.handleInstruct.bind(this)
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
+    this.handleAfter = this.handleAfter.bind(this)
     console.log(this.state.type)
+  }
+
+  handleAfter = () =>{
+    this.setState({
+      isAfter: true
+    })
   }
 
   handler(someValue) {
@@ -153,7 +161,13 @@ export default class App extends Component {
 
         <Route path = "/splash" component={()=><Splash handleInstruct = {()=>this.handleInstruct}/>}/>
         <Route path = "/disagree" component={Disagree}/>
-        <Route path = "/main" component={()=><Main handleInstruct = {()=>this.handleInstruct}/>}/>
+        <Route path = "/main" component={()=><Main 
+                                              handleAfter={this.handleAfter}
+                                              handleInstruct = {()=>this.handleInstruct}
+                                              isAfter = {this.state.isAfter}
+                                              />}
+                                              
+                                              />
         <Route path = "/input" component={Input}/>
       </div>
     )

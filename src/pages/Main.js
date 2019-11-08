@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import Calendars from './Calendars'
 import Graphs from './Graphs'
-// import {Link} from 'react-router-dom'
 
 import CircleLeft from '../resources/top_circles.png'
 import CircleRight from '../resources/top_circles2.png'
-
 
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
@@ -15,9 +13,10 @@ export default class Main extends Component {
     constructor(props){
         super(props)
         this.state = {
-            value:0
+            value:0,
+            isAfter:props.isAfter
         }
-
+        console.log(props)
         this.handleChange = this.handleChange.bind(this)
     }
 
@@ -44,7 +43,7 @@ export default class Main extends Component {
                     <Tab label="Chart">
                     </Tab>
                 </Tabs>
-                {this.state.value === 0 ? <Calendars/> : <Graphs/>}
+                {this.state.value === 0 ? <Calendars isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/> : <Graphs/>}
             </div>
         )
     }
