@@ -98,6 +98,7 @@ class Survey extends Component{
         }
         //sendSurveyResult(res)
         this.props.handleChangeType()
+        this.props.addCount()
         //this.props.handler('Description.')
     }
 
@@ -323,9 +324,15 @@ class Survey extends Component{
             <input type = 'text' placeholder = {'answer'} onChange = {this.handleOption_9}></input>
             </form> 
             <p/>
+            {this.props.count == 0 ? 
             <Link to = "/ios_backgroud">
-                <button onClick={()=>this.submit()}>submit</button>
+                <button onClick={()=>this.submit()}>Submit</button>
+            </Link> : 
+            <Link to = "/good_bye">
+            <button onClick={()=>this.submit()}>Finish</button>
             </Link>
+            }
+            
          </article>
         )
     }

@@ -15,6 +15,7 @@ import Main from './pages/Main'
 import InstructModal from './components/Modal'
 import Input from './pages/Input'
 import Survey from './pages/Survey'
+import GoodBye from './pages/GoodBye'
 
 import questionMark from './resources/question_mark.png'
 
@@ -119,6 +120,14 @@ export default class App extends Component {
     })
   }
 
+  addCount = () => {
+    this.setState({
+      count: +1
+    })
+
+    console.log(this.state.count)
+  }
+
   render() {
     return (
       <div className='device_container'>
@@ -171,7 +180,11 @@ export default class App extends Component {
                                               
                                               />
         <Route path = "/input" component={Input}/>
-        <Route path = "/surveys" component={()=><Survey handleChangeType={this.handleChangeType}/>}/>
+        <Route path = "/surveys" component={()=><Survey handleChangeType={this.handleChangeType}
+                                                        count={this.state.count}
+                                                        addCount={this.addCount}
+                                                />}/>
+        <Route path = "/good_bye" component={GoodBye} />
       </div>
     )
   }
