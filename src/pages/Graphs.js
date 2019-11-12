@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Chart from '../resources/chartSample.png'
 import Chart2 from '../resources/chart2.png'
+import Button from '@material-ui/core/Button';
+import SurveyIcon from '@material-ui/icons/Assignment'
+import {Link} from 'react-router-dom'
 
 import moment from 'moment'
 
@@ -91,6 +94,19 @@ export default class Graphs extends Component {
                     <td>{this.currentDay(2)}</td>
                 </tr></thead></table>
                 <img src={Chart2} width="100%"/>
+                <br/>
+                <Link to = "/surveys">
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<SurveyIcon />}
+                >
+                Survey
+                </Button>
+                </Link>
+                
+                <br/>
+                <br/>
             </div>
             </>
         )

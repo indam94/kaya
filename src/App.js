@@ -14,6 +14,7 @@ import Disagree from './pages/Disagree'
 import Main from './pages/Main'
 import InstructModal from './components/Modal'
 import Input from './pages/Input'
+import Survey from './pages/Survey'
 
 import questionMark from './resources/question_mark.png'
 
@@ -169,6 +170,7 @@ export default class App extends Component {
                                               
                                               />
         <Route path = "/input" component={Input}/>
+        <Route path = "/surveys" component={Survey}/>
       </div>
     )
   }
