@@ -17,7 +17,7 @@ export default class Graphs extends Component {
     }
 
     currentDay = (sub) => {
-        console.log(this.state.cur.subtract(0, 'days').format("DD"))
+        //console.log(this.state.cur.subtract(0, 'days').format("DD"))
         return this.state.cur.add(sub, 'days').format("DD");
     }
 

@@ -35,7 +35,8 @@ export default class App extends Component {
       instrument:"Please Read All Description And Check Agree Or Disagress",
       isInstalled: false,
       isOpenInstruction: false,
-      isAfter: false
+      isAfter: false,
+      count:0
     }
 
     this.handler = this.handler.bind(this)
@@ -89,12 +90,12 @@ export default class App extends Component {
   }
 
   handleChangeType = () => {
-    if(this.setState.type === 'A'){
+    if(this.state.type === 'A'){
       this.setState({type:'B'})
     }else{
       this.setState({type:'A'})
     }
-    
+    console.log(this.state.type)
   }
 
   handleOpen = () => {
@@ -170,7 +171,7 @@ export default class App extends Component {
                                               
                                               />
         <Route path = "/input" component={Input}/>
-        <Route path = "/surveys" component={Survey}/>
+        <Route path = "/surveys" component={()=><Survey handleChangeType={this.handleChangeType}/>}/>
       </div>
     )
   }

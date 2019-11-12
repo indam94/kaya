@@ -96,7 +96,8 @@ class Survey extends Component{
             'question_9' : this.state.selected_9,
             'userID' : this.state.userID
         }
-        sendSurveyResult(res)
+        //sendSurveyResult(res)
+        this.props.handleChangeType()
         //this.props.handler('Description.')
     }
 
@@ -322,7 +323,7 @@ class Survey extends Component{
             <input type = 'text' placeholder = {'answer'} onChange = {this.handleOption_9}></input>
             </form> 
             <p/>
-            <Link to = "/">
+            <Link to = "/ios_backgroud">
                 <button onClick={()=>this.submit()}>submit</button>
             </Link>
          </article>

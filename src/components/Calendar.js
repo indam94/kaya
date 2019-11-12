@@ -28,7 +28,7 @@ export default class Calendar extends Component {
         }   
         // console.log(props.handleInstruct)
         // console.log(this.state.isAfter)
-        console.log(this.props)
+        //console.log(this.props)
         // this.handleChange = this.handleChange.bind(this)
     }
 
