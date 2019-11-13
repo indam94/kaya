@@ -333,7 +333,7 @@ class Survey extends Component{
             </Link>
             }
             
-         </article>
+        </article>
         )
     }
 }

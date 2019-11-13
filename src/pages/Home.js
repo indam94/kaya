@@ -19,6 +19,26 @@ class Home extends Component {
     //this.handleInstall = this.handleInstall.bind(this)
   }
 
+  //  test server call
+  callApi = () => {
+    if(this.props.count === 0){
+      fetch("https://kayas.herokuapp.com/api/consent")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+        data: json.title
+        })
+        console.log(json)
+      })
+    }
+    
+
+  }
+
+  componentDidMount(){
+    this.callApi();
+  }
+
   render(){
     console.log(this.state.isInstalled)
     return (

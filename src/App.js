@@ -128,6 +128,23 @@ export default class App extends Component {
     console.log(this.state.count)
   }
 
+//  test server call
+//   callApi = () => {
+//     fetch("https://jsonplaceholder.typicode.com/todos/1")
+//     .then(res => res.json())
+//     .then(json => {
+//         this.setState({
+//         data: json.title
+//         })
+//         console.log(json)
+//     })
+
+// }
+
+//   componentDidMount(){
+//     this.callApi();
+//   }
+
   render() {
     return (
       <div className='device_container'>
@@ -159,6 +176,7 @@ export default class App extends Component {
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
                                       handleInstruct = {this.handleInstruct}
+                                      count={this.state.count}
                                       type = {this.state.type}/>}
         />
 
