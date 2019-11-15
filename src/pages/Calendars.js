@@ -21,7 +21,7 @@ export default class Calendars extends Component {
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
         }else{
             localStorage.setItem('Information', "Please, access the graph screen")
-            if(localStorage.getItem('type') == 'A'){
+            if(localStorage.getItem('type') === 'A'){
                 this.setState({
                     showProgress: true
                 })

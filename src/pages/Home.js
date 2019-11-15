@@ -52,7 +52,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    //this.callApi();
+    this.callApi();
     if(!this.props.isInstalled){
       localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
       this.change()

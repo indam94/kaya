@@ -52,6 +52,12 @@ export default class App extends Component {
     })
   }
 
+  handleUnAfter = () =>{
+    this.setState({
+      isAfter: false
+    })
+  }
+
   handler(someValue) {
     this.setState({
       screen: someValue
@@ -178,6 +184,7 @@ export default class App extends Component {
                                                         count={this.state.count}
                                                         addCount={this.addCount}
                                                         handleUnInstall={this.handleUnInstall}
+                                                        handleUnAfter={this.handleUnAfter}
                                                 />}/>
         <Route path = "/good_bye" component={GoodBye} />
       </div>
