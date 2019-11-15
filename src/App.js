@@ -174,7 +174,7 @@ export default class App extends Component {
                                 />}
         />
 
-        <Route path = "/splash" component={()=><Splash />}/>
+        <Route path = "/splash" component={()=><Splash type = {this.state.type}/>}/>
         <Route path = "/disagree" component={Disagree}/>
         <Route path = "/main" component={()=><Main 
                                               handleAfter={this.handleAfter}

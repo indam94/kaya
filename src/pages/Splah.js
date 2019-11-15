@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import SplashImage from '../resources/Landing page.png';    //splash image(logo image)
+import SplashImage from '../resources/Landing_pageE.png';
+import SplashImageC from '../resources/Landing_page.png';
 
 import {Redirect} from 'react-router-dom'
 
@@ -20,13 +21,15 @@ class Splash extends Component{
 
     render(){
         if(this.state.redirect){
-            return (<Redirect   to = "/main"
-                                onCreate={()=>this.props.handleInstruct("This is the calendar screen. Please, click on today's date.")}
-            />)
+            return (<Redirect to = "/main"/>)
         }
         return(
             <div className='splash_img'>
-                <img src={SplashImage} alt="splash img"></img>
+                {this.props.type === 'A' ? 
+                    <img src={SplashImage} alt="splash img"/> : 
+                    <img src={SplashImageC} alt="splash img"/>
+                }
+                
             </div>
         )
     }
