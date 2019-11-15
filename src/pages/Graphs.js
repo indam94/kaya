@@ -16,6 +16,10 @@ export default class Graphs extends Component {
         }
     }
 
+    componentDidMount(){
+        localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
+    }
+
     currentDay = (sub) => {
         //console.log(this.state.cur.subtract(0, 'days').format("DD"))
         return this.state.cur.add(sub, 'days').format("DD");
@@ -94,7 +98,8 @@ export default class Graphs extends Component {
                     <td>{this.currentDay(2)}</td>
                 </tr></thead></table>
                 <img src={Chart2} width="100%"/>
-                <br/>
+                <br/><br/>
+                <div className="text-center">
                 <Link to = "/surveys">
                 <Button
                     variant="contained"
@@ -104,6 +109,8 @@ export default class Graphs extends Component {
                 Survey
                 </Button>
                 </Link>
+                </div>
+                
                 
                 <br/>
                 <br/>

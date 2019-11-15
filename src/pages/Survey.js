@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {sendSurveyResult} from '../api/axios'
 import {Link} from 'react-router-dom'
-// import './Survey.css'
+import './Survey.css'
 
 class Survey extends Component{
     constructor(props){

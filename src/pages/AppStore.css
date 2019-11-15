@@ -3,7 +3,7 @@
     min-height: 667px;
     /* height: 100vh; */
     /* max-height: 100vh; */
-    min-width: 375px;
+    min-width: 320px;
     width: 100vw;
     max-width: 500px;
     background-position: center;
@@ -23,9 +23,9 @@
 }
 
 .Logo img{
-    margin: 1rem;
-    width: 7rem;
-    height: 7rem;
+    margin: 1rem 0.5rem 1rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 0.3rem;
     transition: all 0.3s linear;
 }
@@ -127,7 +127,7 @@
     display: block;
     min-height: 667px;
     max-height: 100vh;
-    min-width: 350px;
+    min-width: 280px;
     width: 100%;
     max-width: 500px;
     position: center;

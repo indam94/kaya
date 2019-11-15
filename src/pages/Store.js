@@ -107,7 +107,7 @@ class AppStore extends Component{
             />
             <section className="AppDescription">
             <h4>PreView</h4>
-            <img src={this.state.type === 'A' ? Preview1 : Preview2} alt="Preview1"></img>
+            <img src={this.state.type === 'A' ? Preview1 : Preview2} width="100%" alt="Preview1"></img>
             <hr
                 style={{
                     color: "#E7E7E7",

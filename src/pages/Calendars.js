@@ -10,8 +10,17 @@ export default class Calendars extends Component {
             pre: moment().subtract(1, 'month'),
             cur: moment(),
             fut: moment().add(1, 'month'),
-            isAfter: props.isAfter
+            isAfter: props.isAfter || false
         }
+    }
+
+    componentDidMount(){
+        if(!this.state.isAfter){
+            localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
+        }else{
+            localStorage.setItem('Information', "Please, access the graph screen")
+        }
+        
     }
 
     render() {
