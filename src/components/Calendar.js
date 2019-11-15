@@ -86,12 +86,62 @@ export default class Calendar extends Component {
             let classNameDiv = ((d === parseInt(this.currentDay()) && this.month() === moment().format("MMMM"))  ? "current-day-border" : "day-border")
             let classNameCycle = ""
 
-            switch(d){
-                case parseInt(this.currentDay() + 8, 10) :
-                    classNameCycle = "cycle-day-first"
-                    break;
-                default :
-                    classNameCycle = ""
+            //first cycle expected
+            if( (d - 7 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 7 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 7 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day-first"
+            }
+            //cycling
+            else if( (d - 8 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 8 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 8 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day"
+            }
+            else if( (d - 9 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 9 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 9 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day"
+            }
+            else if( (d - 10 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 10 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 10 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day"
+            }
+            else if( (d - 11 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 11 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 11 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day"
+            }
+            //last cycle expected
+            else if( (d - 12 === parseInt(this.currentDay()) 
+                    && this.month() === moment().format("MMMM"))
+            ||  (parseInt(this.currentDay()) + 12 > parseInt(this.daysInMonth()) 
+                    && d == parseInt(this.currentDay()) + 12 - parseInt(this.daysInMonth()) 
+                    && this.month() === moment().add(1,'month').format("MMMM"))
+            ){
+                //console.log(parseInt(this.currentDay()) + 21)
+                classNameCycle = "cycle-day-last"
             }
 
             daysInMonth.push(
