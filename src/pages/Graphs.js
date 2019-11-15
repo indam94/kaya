@@ -45,7 +45,7 @@ export default class Graphs extends Component {
                         marginBottom:"0.6rem"
                     }}
                 />
-                <img src={Chart} width="100%"></img>
+                <img src={Chart} width="100%" alt="main_charts"></img>
                 <table
                     style={{
                         textAlign: "center",
@@ -97,7 +97,7 @@ export default class Graphs extends Component {
                     <td>{this.currentDay(2)}</td>
                     <td>{this.currentDay(2)}</td>
                 </tr></thead></table>
-                <img src={Chart2} width="100%"/>
+                <img src={Chart2} width="100%" alt="sub_chart"/>
                 <br/><br/>
                 <div className="text-center">
                 <Link to = "/surveys">

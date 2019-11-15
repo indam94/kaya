@@ -9,6 +9,7 @@ tr{
 
 td{
     width: 14.2vw;
+    height: 14.2vw;
 }
 
 .calendar-container{
@@ -104,4 +105,18 @@ td{
 .label-year{
     font-size: 0.6em;
     font-weight: 500;
+}
+
+.cycle-day{
+    background: #FF6B83;
+    height: 30px;
+    color: #ffffff;
+}
+
+.cycle-day-first{
+
+}
+
+.cycle-day-last{
+
 }

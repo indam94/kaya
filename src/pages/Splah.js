@@ -11,6 +11,7 @@ class Splash extends Component{
     }
 
     componentDidMount(){
+        localStorage.setItem('Information',"Splashing...")
         setTimeout(() => {
             this.setState({
                 redirect: true

@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 
-class input extends React.Component {
+class input extends Component {
 	constructor(props) {
-		super(props);
+    super(props);
+    
+    this.state = {
+
+    }
 	}
 
   render() {

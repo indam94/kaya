@@ -29,12 +29,6 @@ export default function SimpleModal(props) {
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(props.isOpen);
-    const instruction = props.instruct;
-    console.log(props)
-//   const handleOpen = () => {
-//     setOpen(true);
-//   };
-
   const handleClose = () => {
     setOpen(false);
     
@@ -53,7 +47,6 @@ export default function SimpleModal(props) {
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">Information</h2>
           <p id="simple-modal-description">
-            {/* {instruction} */}
             {localStorage.getItem('Information')}
           </p>
 
