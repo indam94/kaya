@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import { FormControlLabel } from '@material-ui/core';
 import CustomButton from '@material-ui/core/Button';
@@ -22,7 +22,9 @@ function Description(props) {
         }
     };
 
-    //const instruct = (value) => props.handleInstruct
+    useEffect(() => {
+        localStorage.setItem('Information', "Please Read All Description And Check Agree Or Disagress")
+    })
 
     return (
         <div style={{padding:"1rem"}}>

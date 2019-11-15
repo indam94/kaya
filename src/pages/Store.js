@@ -8,6 +8,7 @@ import Preview1 from '../resources/PreView1.jpeg';
 import Preview2 from '../resources/PreView2.jpeg'
 
 import KAYAIcon from '../resources/logo.png';
+import KAYAIconC from '../resources/control_ver_logo.png'
 
 import StarRatings from 'react-star-ratings'
 
@@ -26,7 +27,10 @@ class AppStore extends Component{
     install(){
         //console.log(this.props)
         this.props.handleInstall();
-        this.props.handleInstruct("Please, open the app by clicking on the Kaya icon [icon].");
+    }
+
+    componentDidMount(){
+        localStorage.setItem('Information', "Please, read the whole description and install the app.")
     }
 
     render(){
@@ -34,7 +38,10 @@ class AppStore extends Component{
         <section className="background_app_store">
             {/* First Section */}
             <article className="simple_info">
-            <div className="Logo"><img src={KAYAIcon} alt="logo"></img></div>
+            <div className="Logo">
+                {this.state.type === 'A'? <img src={KAYAIcon} alt="logo"/> : <img src={KAYAIconC} alt="logo"/>}
+                
+            </div>
             <div className="AppName">
                 <div className="AppName_Inside">
                     <h4>KAYA</h4>
@@ -108,9 +115,45 @@ class AppStore extends Component{
                 }}
             />
             <h4>Description</h4>
-            <p>{this.state.type === 'A'? 'Your body is unique and now so is your app. Get personalized fertility recommendations straight to your phone. KAYA is a fertility tracking app that predicts your menstrual cycles with precision and accuracy. It uses smart algorithms to predict your ovulation cycle. Powered by Machine Learning and Artificial Intelligence.' : 
-            'Your body is unique and now so is your app. Get personalized fertility recommendations straight to your phone. KAYA is a fertility tracking app that predicts your menstrual cycles with precision and accuracy. It uses your personal health information and fertility knowledge to predict your ovulation cycle. Powered by you. Take control.'}<br /><br /><br />
-            </p>
+            {this.state.type === 'A'? 
+            <div>
+                Your body is unique and now so is your app. 
+                Get personalized fertility recommendations straight to your phone. 
+                <br/><br/>
+                KAYA is a fertility tracking app that predicts your menstrual cycles with precision and accuracy. 
+                It uses smart algorithms to predict your ovulation cycle. 
+                Powered by Machine Learning and Artificial Intelligence.
+                <br/><br/>
+                ------------<br/>
+                Features<br/>
+                ------------<br/><br/>
+
+                <li>Data-driven predictions of fertility and ovulation, powered by AI.</li>
+                <li>Comprehensive and easy tracking: track periods and cycle, moods and symptoms, intercourse, basal body temperature, cervical mucus, ovulation predictor kits and pregnancy tests.</li>
+                <li>reminders for the upcoming period and fertile days.</li>
+                <li>Vital information at a glance: easy and intuitive calendar to visualize non-fertile, fertile, ovulation, expected period and much more.</li>
+                <li>Detailed temperature graph to watch for changes.</li>
+            </div>
+            : 
+            <div>
+                Your body is unique and now so is your app. 
+                Get personalized fertility recommendations straight to your phone. 
+                <br/><br/>
+                KAYA is a fertility tracking app that predicts your menstrual cycles with precision and accuracy. 
+                It uses your personal health information and fertility knowledge to predict your ovulation cycle. 
+                Powered by you. Take control of your fertility.
+                <br/><br/>
+                ------------<br/>
+                Features<br/>
+                ------------<br/><br/>
+
+                <li>Ovulation calculator and calendar.</li>
+                <li>Comprehensive and easy tracking: track periods and cycle, moods and symptoms, intercourse, basal body temperature, cervical mucus, ovulation predictor kits and pregnancy tests.</li>
+                <li>reminders for the upcoming period and fertile days.</li>
+                <li>Vital information at a glance: easy and intuitive calendar to visualize non-fertile, fertile, ovulation, expected period and much more.</li>
+                <li>Detailed temperature graph to watch for changes.</li>
+            </div>
+            }
         </section>
         </section>
         )

@@ -42,7 +42,6 @@ export default class App extends Component {
 
     this.handler = this.handler.bind(this)
     this.handleInstall = this.handleInstall.bind(this)
-    this.handleInstruct = this.handleInstruct.bind(this)
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleAfter = this.handleAfter.bind(this)
@@ -113,13 +112,6 @@ export default class App extends Component {
     console.log(this.state.isOpenInstruction)
   }
 
-  handleInstruct = (value) => {
-    console.log(value)
-    this.setState({
-      instrument: value
-    })
-  }
-
   addCount = () => {
     this.setState({
       count: +1
@@ -158,41 +150,34 @@ export default class App extends Component {
                                           isOpen={this.state.isOpenInstruction}
                                           handleOpen={this.handleOpen}
                                           handleClose={this.handleClose}
-                                          instruct={this.state.instrument}
                                           /> : ''}
         
         <Route  exact path = "/" 
-                component = {()=><Description handleInstruct = {this.handleInstruct}
-                                              //instruct={this.state.instrument}
-                />}
+                component = {()=><Description />}
         />
 
         <Route  path = "/login" 
-                component = {()=><Login handleInstruct = {this.handleInstruct}
-                                        instruct="Regular login and password screen"/>}
+                component = {()=><Login />}
 
         />
 
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
-                                      handleInstruct = {this.handleInstruct}
                                       count={this.state.count}
                                       type = {this.state.type}/>}
         />
 
         <Route  path = {`/app_store/:${this.state.type}`} 
                 component={()=><Store handleInstall={this.handleInstall}
-                                      handleInstruct = {this.handleInstruct}
                                       type = {this.state.type} 
                                       isInstalled = {this.state.isInstalled} 
                                 />}
         />
 
-        <Route path = "/splash" component={()=><Splash handleInstruct = {()=>this.handleInstruct}/>}/>
+        <Route path = "/splash" component={()=><Splash />}/>
         <Route path = "/disagree" component={Disagree}/>
         <Route path = "/main" component={()=><Main 
                                               handleAfter={this.handleAfter}
-                                              handleInstruct = {()=>this.handleInstruct}
                                               isAfter = {this.state.isAfter}
                                               />}
                                               

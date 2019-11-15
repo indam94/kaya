@@ -53,7 +53,8 @@ export default function SimpleModal(props) {
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">Information</h2>
           <p id="simple-modal-description">
-            {instruction}
+            {/* {instruction} */}
+            {localStorage.getItem('Information')}
           </p>
 
           <button type="button" onClick={handleClose}>

@@ -12,11 +12,11 @@ class Home extends Component {
     super(props)
     this.state = {
       isInstalled : props.isInstalled,
-      instructionText : "1. Please access app store",
+      instruct : "1. Please access app store",
       type : props.type
     }
     console.log(this.props)
-    //this.handleInstall = this.handleInstall.bind(this)
+    
   }
 
   //  test server call
@@ -36,7 +36,14 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    this.callApi();
+    //this.callApi();
+    if(!this.props.isInstalled){
+      localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
+    }
+    else{
+      localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
+    }
+    
   }
 
   render(){
@@ -51,7 +58,6 @@ class Home extends Component {
               type: this.props.type,
               isInstalled: this.props.isInstalled,
             }}
-            onClick={()=>this.props.handleInstruct("Please, read the whole description and install the app.")}
       >
       <IconButton img={AppStore} name="App Store"></IconButton>
       </Link>
@@ -64,7 +70,6 @@ class Home extends Component {
       {this.props.isInstalled ? 
         <Link to="/splash" 
               className = 'icon'
-              onClick={()=>this.props.handleInstruct("This is the calendar screen. Please, click on today's date.")}
         >
           <IconButton img={Kaya} name="KAYA" /> 
         </Link>
