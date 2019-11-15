@@ -9,7 +9,6 @@ tr{
 
 td{
     width: 14.2vw;
-    height: 14.2vw;
 }
 
 .calendar-container{
@@ -109,14 +108,33 @@ td{
 
 .cycle-day{
     background: #FF6B83;
-    height: 30px;
+    height: 60%;
+    width: 100%;
     color: #ffffff;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cycle-day-first{
-
+    background: #FF6B83;
+    height: 60%;
+    width: 100%;
+    color: #ffffff;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cycle-day-last{
-
+    background: #FF6B83;
+    height: 60%;
+    width: 100%;
+    color: #ffffff;
+    border-radius: 0px 20px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -82,12 +82,22 @@ export default class Calendar extends Component {
 
         let daysInMonth = [];
         for(let d = 1; d <= this.daysInMonth(); d++){
-            let className = ( (d == this.currentDay() && this.month() == moment().format("MMMM")) ? "day current-day" : "day")
-            let classNameDiv = ((d == this.currentDay() && this.month() == moment().format("MMMM"))  ? "current-day-border" : "day-border")
+            let className = ( (d === parseInt(this.currentDay()) && this.month() === moment().format("MMMM")) ? "day current-day" : "day")
+            let classNameDiv = ((d === parseInt(this.currentDay()) && this.month() === moment().format("MMMM"))  ? "current-day-border" : "day-border")
+            let classNameCycle = ""
+
+            switch(d){
+                case parseInt(this.currentDay() + 8, 10) :
+                    classNameCycle = "cycle-day-first"
+                    break;
+                default :
+                    classNameCycle = ""
+            }
+
             daysInMonth.push(
                 <td key={d} className={className} >
                     <div className="helper">
-                    {(d == this.currentDay() && this.month() == moment().format("MMMM")) ? 
+                    {(d === parseInt(this.currentDay()) && this.month() === moment().format("MMMM")) ? 
                     
                     <Link   to = "/input" 
                             className="link"
@@ -100,7 +110,7 @@ export default class Calendar extends Component {
                         <div>
                         <span>{d}</span>
                         <br/>
-                        {this.state.isAfter ? <img src={thermostat} width="15px"></img> : null}
+                        {this.state.isAfter ? <img src={thermostat} alt = "the" width="15px"></img> : null}
                         </div>
                     
                     </div>
@@ -109,64 +119,79 @@ export default class Calendar extends Component {
                     : 
                     
                     <div className={classNameDiv}>
-                        <div>
+                        <div className={classNameCycle}>
                             <span>{d}</span>
                             <br/>
-                            {(d+1 == this.currentDay() && this.month() == moment().format("MMMM")) ?
+                            {(d+1 === parseInt(this.currentDay()) && this.month() === moment().format("MMMM")) ?
                             <div>
-                                <img src={Heart} width="15px"></img>
-                                <img src={Sad} width="15px"></img>
+                                <img src={Heart} alt = "the" width="15px"></img>
+                                <img src={Sad} alt = "the" width="15px"></img>
                             </div>
                             :null
                             }
-                            {(d+2 == this.currentDay() && this.month() == moment().format("MMMM")) ?
-                            <img src={Symptom} width="15px"></img>
+                            {(d+2 === parseInt(this.currentDay()) && this.month() === moment().format("MMMM")) ?
+                            <img src={Symptom} alt = "the" width="15px"></img>
                             :
                             null
                             }
-                            {(d+7 == this.currentDay() && this.month() == moment().format("MMMM")) ?
-                            <img src={thermostat} width="15px"></img>
+                            {(d+7 === parseInt(this.currentDay()) && this.month() === moment().format("MMMM")) ?
+                            <img src={thermostat} alt = "the" width="15px"></img>
+                            :
+                            null
+                            }
+                            {(d+9 === parseInt( this.currentDay()) && this.month() === moment().format("MMMM")) ?
+                            <div><img src={thermostat} alt = "the" width="15px"></img><img src={Heart} alt = "the" width="15px"></img></div>
+                            :
+                            null
+                            }
+                            {(d+10 === parseInt( this.currentDay()) && this.month() === moment().format("MMMM")) ?
+                            <div><img src={Mucus} alt = "the" width="15px"></img><img src={Smile} alt = "the" width="15px"></img></div>
+                            :
+                            null
+                            }
+                            {(d+11 === parseInt( this.currentDay()) && this.month() === moment().format("MMMM")) ?
+                            <img src={Mucus} alt = "the" width="15px"></img>
                             :
                             null
                             }
 
                             {   
-                                (d + 7 < 1) ? (this.month() == moment().format("MMMM") ? 
-                                    <img src={thermostat} width="15px"></img> : null
+                                (d + 7 < 1) ? (this.month() === moment().format("MMMM") ? 
+                                    <img src={thermostat} alt = "the" width="15px"></img> : null
                                 ) 
                                 :
-                                ( d == (this.daysInMonth() - (7-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
-                                    <img src={thermostat} width="15px"></img>:null
+                                ( d === parseInt( (this.daysInMonth() - (7-this.currentDay()))) && this.month() === moment().subtract(1, 'month').format("MMMM") ? 
+                                    <img src={thermostat} alt = "the" width="15px"></img>:null
                                 )
                             }
 
                             {   
-                                (d + 9 < 1) ? (this.month() == moment().format("MMMM") ? 
-                                    <img src={thermostat} width="15px"></img> : null
+                                (d + 9 < 1) ? (this.month() === moment().format("MMMM") ? 
+                                <div><img src={thermostat} alt = "the" width="15px"></img><img src={Heart} alt = "the" width="15px"></img></div> : null
                                 ) 
                                 :
-                                ( d == (this.daysInMonth() - (9-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
-                                    <div><img src={thermostat} width="15px"></img><img src={Heart} width="15px"></img></div>:null
+                                ( d === parseInt( (this.daysInMonth() - (9-this.currentDay()))) && this.month() === moment().subtract(1, 'month').format("MMMM") ? 
+                                    <div><img src={thermostat} alt = "the" width="15px"></img><img src={Heart} alt = "the" width="15px"></img></div>:null
                                 )
                             }
 
                             {   
-                                (d + 10 < 1) ? (this.month() == moment().format("MMMM") ? 
-                                    <img src={thermostat} width="15px"></img> : null
+                                (d + 10 < 1) ? (this.month() === moment().format("MMMM") ? 
+                                <div><img src={Mucus} alt = "the" width="15px"></img><img src={Smile} alt = "the" width="15px"></img></div>: null
                                 ) 
                                 :
-                                ( d == (this.daysInMonth() - (10-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
-                                    <div><img src={Mucus} width="15px"></img><img src={Smile} width="15px"></img></div>:null
+                                ( d === parseInt( (this.daysInMonth() - (10-this.currentDay())) )&& this.month() === moment().subtract(1, 'month').format("MMMM") ? 
+                                    <div><img src={Mucus} alt = "the" width="15px"></img><img src={Smile} alt = "the" width="15px"></img></div>:null
                                 )
                             }
 
                             {   
-                                (d + 11 < 1) ? (this.month() == moment().format("MMMM") ? 
-                                    <img src={Mucus} width="15px"></img> : null
+                                (d + 11 < 1) ? (this.month() === moment().format("MMMM") ? 
+                                    <img src={Mucus} alt = "the" width="15px"></img> : null
                                 ) 
                                 :
-                                ( d == (this.daysInMonth() - (11-this.currentDay())) && this.month() == moment().subtract(1, 'month').format("MMMM") ? 
-                                    <img src={Mucus} width="15px"></img>:null
+                                ( d === parseInt( (this.daysInMonth() - (11-this.currentDay())) )&& this.month() === moment().subtract(1, 'month').format("MMMM") ? 
+                                    <img src={Mucus} alt = "the" width="15px"></img>:null
                                 )
                             }
                         </div>

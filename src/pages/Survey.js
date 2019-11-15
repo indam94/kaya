@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {sendSurveyResult} from '../api/axios'
+// import {sendSurveyResult} from '../api/axios'
 import {Link} from 'react-router-dom'
 import './Survey.css'
 
@@ -96,6 +96,7 @@ class Survey extends Component{
             'question_9' : this.state.selected_9,
             'userID' : this.state.userID
         }
+        console.log(res)
         //sendSurveyResult(res)
         this.props.handleChangeType()
         this.props.addCount()
@@ -324,7 +325,7 @@ class Survey extends Component{
             <input type = 'text' placeholder = {'answer'} onChange = {this.handleOption_9}></input>
             </form> 
             <p/>
-            {this.props.count == 0 ? 
+            {this.props.count === 0 ? 
             <Link to = "/ios_backgroud">
                 <button onClick={()=>this.submit()}>Submit</button>
             </Link> : 
