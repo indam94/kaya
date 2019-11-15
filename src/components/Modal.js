@@ -51,7 +51,7 @@ export default function SimpleModal(props) {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          <h2 id="simple-modal-title">Instruction</h2>
+          <h2 id="simple-modal-title">Information</h2>
           <p id="simple-modal-description">
             {instruction}
           </p>
