@@ -7,16 +7,32 @@ import IconButton from '../components/IconButton'
 import {Link} from 'react-router-dom'
 import Kaya from '../resources/logo.png';
 
+function getRandomType(){
+    let type = Math.floor(Math.random() * 2) === 1 ? 'A' : 'B';
+    localStorage.setItem('type', type)
+    return type
+}
+
 class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
       isInstalled : props.isInstalled,
-      instruct : "1. Please access app store",
-      type : props.type
+      type : localStorage.getItem('type') || getRandomType()
     }
-    console.log(this.props)
-    
+    // console.log(localStorage.getItem('type'))
+  }
+
+  change = () =>{
+    if(!this.state.isInstalled){
+      if(localStorage.getItem('type') === 'A'){
+        localStorage.setItem('type', 'B')
+      }
+      else{
+        localStorage.setItem('type', 'A')
+      }
+      console.log(localStorage.getItem('type'))
+    }
   }
 
   //  test server call
@@ -39,6 +55,7 @@ class Home extends Component {
     //this.callApi();
     if(!this.props.isInstalled){
       localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
+      this.change()
     }
     else{
       localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
@@ -47,12 +64,11 @@ class Home extends Component {
   }
 
   render(){
-    console.log(this.state.isInstalled)
+    // console.log(this.state.isInstalled)
     return (
       <section className="background_ios">
       {/* App Store Button : 1st Step */}
-      {/* <button onClick={()=>{this.props.handler('Install application.')}}><IconButton img={AppStore} name="App Store"></IconButton></button> */}
-      <Link to={`/app_store/:${this.state.type}`}
+      <Link to={`/app_store`}
             className="icon"
             state={{
               type: this.props.type,

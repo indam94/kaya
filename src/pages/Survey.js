@@ -98,7 +98,7 @@ class Survey extends Component{
         }
         console.log(res)
         //sendSurveyResult(res)
-        this.props.handleChangeType()
+        this.props.handleUnInstall()
         this.props.addCount()
         //this.props.handler('Description.')
     }

@@ -24,6 +24,7 @@ function Description(props) {
 
     useEffect(() => {
         localStorage.setItem('Information', "Please Read All Description And Check Agree Or Disagress")
+        localStorage.removeItem('type')
     })
 
     return (

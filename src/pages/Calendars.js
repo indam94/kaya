@@ -21,14 +21,17 @@ export default class Calendars extends Component {
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
         }else{
             localStorage.setItem('Information', "Please, access the graph screen")
-            this.setState({
-                showProgress: true
-            })
-            setTimeout(() => {
+            if(localStorage.getItem('type') == 'A'){
                 this.setState({
-                    showProgress: false
+                    showProgress: true
                 })
-            }, 5000);   //splash time second * 1000
+                setTimeout(() => {
+                    this.setState({
+                        showProgress: false
+                    })
+                }, 5000);   //splash time second * 1000
+            }
+            
         }
     }
 

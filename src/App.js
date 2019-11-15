@@ -20,9 +20,9 @@ import GoodBye from './pages/GoodBye'
 import questionMark from './resources/question_mark.png'
 
 
-function getRandomType(){
-  return Math.floor(Math.random() * 2) === 1 ? 'A' : 'B';
-}
+// function getRandomType(){
+//   return Math.floor(Math.random() * 2) === 1 ? 'A' : 'B';
+// }
 
 export default class App extends Component {
 
@@ -31,9 +31,8 @@ export default class App extends Component {
     this.state= {
       userId : "",
       screen : "",
-      type : getRandomType(),
+      // type : getRandomType(),
       end : false,
-      instrument:"Please Read All Description And Check Agree Or Disagress",
       isInstalled: false,
       isOpenInstruction: false,
       isAfter: false,
@@ -45,7 +44,6 @@ export default class App extends Component {
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleAfter = this.handleAfter.bind(this)
-    console.log(this.state.type)
   }
 
   handleAfter = () =>{
@@ -87,15 +85,6 @@ export default class App extends Component {
     this.setState({
       isInstalled: false
     })
-  }
-
-  handleChangeType = () => {
-    if(this.state.type === 'A'){
-      this.setState({type:'B'})
-    }else{
-      this.setState({type:'A'})
-    }
-    console.log(this.state.type)
   }
 
   handleOpen = () => {
@@ -164,17 +153,19 @@ export default class App extends Component {
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
                                       count={this.state.count}
-                                      type = {this.state.type}/>}
+                                      // type = {this.state.type}
+                                      />}
         />
 
-        <Route  path = {`/app_store/:${this.state.type}`} 
+        <Route  path = {`/app_store`} 
                 component={()=><Store handleInstall={this.handleInstall}
-                                      type = {this.state.type} 
+                                      // type = {this.state.type} 
                                       isInstalled = {this.state.isInstalled} 
                                 />}
         />
 
-        <Route path = "/splash" component={()=><Splash type = {this.state.type}/>}/>
+        <Route path = "/splash" component={()=><Splash //type = {this.state.type}
+                                                />}/>
         <Route path = "/disagree" component={Disagree}/>
         <Route path = "/main" component={()=><Main 
                                               handleAfter={this.handleAfter}
@@ -183,9 +174,10 @@ export default class App extends Component {
                                               
                                               />
         <Route path = "/input" component={Input}/>
-        <Route path = "/surveys" component={()=><Survey handleChangeType={this.handleChangeType}
+        <Route path = "/surveys" component={()=><Survey 
                                                         count={this.state.count}
                                                         addCount={this.addCount}
+                                                        handleUnInstall={this.handleUnInstall}
                                                 />}/>
         <Route path = "/good_bye" component={GoodBye} />
       </div>

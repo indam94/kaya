@@ -18,7 +18,7 @@ class AppStore extends Component{
     constructor(props){
         super(props)
         this.state = {
-            type : props.type,
+            type : localStorage.getItem('type') || 'B',
         }
         console.log(this.props)
         this.install = this.install.bind(this)
