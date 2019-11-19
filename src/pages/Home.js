@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import AppStore from '../resources/App Store.png'
 import Calendar from '../resources/Calendar Official.png'
-import Clock from '../resources/Clock.png'
-import Settings from '../resources/Settings.png'
+// import Clock from '../resources/Clock.png'
+// import Settings from '../resources/Settings.png'
 import IconButton from '../components/IconButton'
 import {Link} from 'react-router-dom'
 import Kaya from '../resources/logo.png';

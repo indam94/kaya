@@ -4,8 +4,8 @@ import './AppStore.css';
 import Install from '@material-ui/core/Button';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
-import Preview1 from '../resources/PreView1.jpeg';
-import Preview2 from '../resources/PreView2.jpeg'
+import Preview1 from '../resources/app_store_page.png';
+import Preview2 from '../resources/app_store_page.png'
 
 import KAYAIcon from '../resources/logo.png';
 import KAYAIconC from '../resources/control_ver_logo.png'

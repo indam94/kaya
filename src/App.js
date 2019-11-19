@@ -16,6 +16,7 @@ import InstructModal from './components/Modal'
 import Input from './pages/Input'
 import Survey from './pages/Survey'
 import GoodBye from './pages/GoodBye'
+import Between from './pages/Between'
 
 import questionMark from './resources/question_mark.png'
 
@@ -187,6 +188,7 @@ export default class App extends Component {
                                                         handleUnAfter={this.handleUnAfter}
                                                 />}/>
         <Route path = "/good_bye" component={GoodBye} />
+        <Route path = "/between" component={Between} />
       </div>
     )
   }

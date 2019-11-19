@@ -327,7 +327,7 @@ class Survey extends Component{
             </form> 
             <p/>
             {this.props.count === 0 ? 
-            <Link to = "/ios_backgroud">
+            <Link to = "/between">
                 <button onClick={()=>this.submit()}>Submit</button>
             </Link> : 
             <Link to = "/good_bye">
