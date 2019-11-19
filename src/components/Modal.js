@@ -32,7 +32,7 @@ export default function SimpleModal(props) {
   const handleClose = () => {
     setOpen(false);
     
-    props.handleClose()
+    // props.handleClose()
   };
 
 

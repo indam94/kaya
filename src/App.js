@@ -142,11 +142,13 @@ export default class App extends Component {
             <img src={questionMark} alt = "instruct"/>
           </button>
         </div>
-        {this.state.isOpenInstruction? <InstructModal 
-                                          isOpen={this.state.isOpenInstruction}
-                                          handleOpen={this.handleOpen}
-                                          handleClose={this.handleClose}
-                                          /> : ''}
+        {this.state.isOpenInstruction? 
+          <InstructModal 
+          isOpen={this.state.isOpenInstruction}
+          handleOpen={this.handleOpen}
+          handleClose={this.handleClose}
+          /> : null
+        }
         
         <Route  exact path = "/" 
                 component = {()=><Description />}
@@ -160,7 +162,7 @@ export default class App extends Component {
         <Route  path = "/ios_backgroud" 
                 component={()=><Home  isInstalled={this.state.isInstalled} 
                                       count={this.state.count}
-                                      // type = {this.state.type}
+                                      
                                       />}
         />
 

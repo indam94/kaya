@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import moment from 'moment'
 import Calendar from '../components/Calendar'
 import Progress from '../components/ProgressBar'
-
+import InstructModal from '../components/Modal'
 export default class Calendars extends Component {
 
     constructor(props){
@@ -13,6 +13,11 @@ export default class Calendars extends Component {
             fut: moment().add(1, 'month'),
             isAfter: props.isAfter || false,
             showProgress:false,
+        }
+        if(!this.state.isAfter){
+            localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
+        }else{
+            localStorage.setItem('Information', "Please, access the graph screen")
         }
     }
 
@@ -43,6 +48,7 @@ export default class Calendars extends Component {
                 <Calendar dateContext={this.state.pre} isAfter={this.state.isAfter} />
                 <Calendar dateContext={this.state.cur} isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/>
                 <Calendar dateContext={this.state.fut} isAfter={this.state.isAfter} />
+                <InstructModal isOpen={true}/>
             </div>
         )
     }

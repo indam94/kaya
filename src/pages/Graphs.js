@@ -4,8 +4,10 @@ import Chart2 from '../resources/chart2.png'
 import Button from '@material-ui/core/Button';
 import SurveyIcon from '@material-ui/icons/Assignment'
 import {Link} from 'react-router-dom'
-
+import InstructModal from '../components/Modal'
 import moment from 'moment'
+
+import questionMark from '../resources/question_mark.png'
 
 export default class Graphs extends Component {
 
@@ -14,6 +16,7 @@ export default class Graphs extends Component {
         this.state = {
             cur: moment(),
         }
+        localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
     }
 
     componentDidMount(){
@@ -28,6 +31,12 @@ export default class Graphs extends Component {
     render() {
         return (
             <>
+            <div className = "instruction">
+            <button onClick={this.handleOpen}
+            >
+                <img src={questionMark} alt = "instruct"/>
+            </button>
+            </div>
             <div className = "graph_background">
                 <p style={{
                     fontSize: "1.2rem",
@@ -111,7 +120,7 @@ export default class Graphs extends Component {
                 </Link>
                 </div>
                 
-                
+                <InstructModal isOpen={true}/>
                 <br/>
                 <br/>
             </div>

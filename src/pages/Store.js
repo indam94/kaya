@@ -14,6 +14,8 @@ import StarRatings from 'react-star-ratings'
 
 import {Link} from 'react-router-dom'
 
+import InstructModal from '../components/Modal'
+
 class AppStore extends Component{
     constructor(props){
         super(props)
@@ -21,6 +23,7 @@ class AppStore extends Component{
             type : localStorage.getItem('type') || 'B',
         }
         console.log(this.props)
+        localStorage.setItem('Information', "Please, read the whole description and install the app.")
         this.install = this.install.bind(this)
     }
 
@@ -155,6 +158,9 @@ class AppStore extends Component{
             </div>
             }
         </section>
+        <InstructModal 
+          isOpen={true}
+        />
         </section>
         )
     }
