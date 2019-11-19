@@ -29,9 +29,9 @@ function Description(props) {
 
     return (
         <div style={{padding:"1rem"}}>
-            <div style={{}}></div>
+            <div style={{position:"absolute",top:"0.5rem",right:"0.5rem",zIndex:11,width:"50px",height:"50px",background:"#ffffff"}}></div>
             {/* you put Title here */}
-            <h1 style={{fontSize:"150%", textAlign:"center"}}>Instructions and texts for the prototype</h1>
+            <h1 style={{fontWeight:500,fontSize:"120%", textAlign:"center",marginLeft:"50px",marginRight:"50px"}}>Instructions and texts for the prototype</h1>
                 {/* you put Some Description here */}
                 <br/><h2 style={{fontSize:"100%"}}>Purpose and Procedure</h2><br/>
                 Thank you for taking part in this experiment. 
