@@ -29,7 +29,7 @@ function Description(props) {
 
     return (
         <div style={{padding:"1rem"}}>
-
+            <div style={{}}></div>
             {/* you put Title here */}
             <h1 style={{fontSize:"150%", textAlign:"center"}}>Instructions and texts for the prototype</h1>
                 {/* you put Some Description here */}

@@ -80,14 +80,14 @@ class Home extends Component {
       {/* Sample Icon1 */}
       <IconButton img={Calendar} name="Calendar"></IconButton>
       {/* Sample Icon2 */}
-      <IconButton img={Clock} name="Clock"></IconButton>
+      {/* <IconButton img={Clock} name="Clock"></IconButton> */}
       {/* Sample Icon3 */}
-      <IconButton img={Settings} name="Settings"></IconButton>
+      {/* <IconButton img={Settings} name="Settings"></IconButton> */}
       {this.props.isInstalled ? 
         <Link to="/splash" 
               className = 'icon'
         >
-          <IconButton img={Kaya} name="KAYA" /> 
+          <IconButton img={Kaya} style={{margin:"10px"}} name="KAYA" /> 
         </Link>
         : 
         <div/>

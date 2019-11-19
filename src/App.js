@@ -34,7 +34,7 @@ export default class App extends Component {
       // type : getRandomType(),
       end : false,
       isInstalled: false,
-      isOpenInstruction: false,
+      isOpenInstruction: true,
       isAfter: false,
       count:0
     }

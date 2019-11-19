@@ -4,7 +4,7 @@ const IconButton = ({img, name}) => {
     return (
         <article className="icon">
             <img src={img} alt="icon" name={name}></img>
-            <h4>{name}</h4>
+            <h4 name={name}>{name}</h4>
         </article>
     );
 }

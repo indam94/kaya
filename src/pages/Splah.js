@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import SplashImage from '../resources/Landing_pageE.png';
-import SplashImageC from '../resources/Landing_page.png';
+import SplashImageC from '../resources/Landing_pageC.png';
 
 import {Redirect} from 'react-router-dom'
 
