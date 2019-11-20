@@ -15,6 +15,7 @@ export default class Graphs extends Component {
         super(props)
         this.state = {
             cur: moment(),
+            isOpen: true,
         }
         localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
     }
@@ -27,6 +28,13 @@ export default class Graphs extends Component {
         //console.log(this.state.cur.subtract(0, 'days').format("DD"))
         return this.state.cur.add(sub, 'days').format("DD");
     }
+
+    handleOpen = () => {
+        this.setState({
+            isOpen:true
+        })
+        console.log("Open")
+    };
 
     render() {
         return (
@@ -120,7 +128,7 @@ export default class Graphs extends Component {
                 </Link>
                 </div>
                 
-                <InstructModal isOpen={true}/>
+                <InstructModal isOpen={this.state.isOpen}/>
                 <br/>
                 <br/>
             </div>
