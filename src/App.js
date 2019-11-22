@@ -45,6 +45,8 @@ export default class App extends Component {
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)
     this.handleAfter = this.handleAfter.bind(this)
+
+    console.log(this.state.count)
   }
 
   handleAfter = () =>{
@@ -111,9 +113,9 @@ export default class App extends Component {
   addCount = () => {
     this.setState({
       count: +1
-    })
+    },console.log(this.state.count))
 
-    console.log(this.state.count)
+    
   }
 
 //  test server call

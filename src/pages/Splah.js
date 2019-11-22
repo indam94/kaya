@@ -16,7 +16,6 @@ class Splash extends Component{
             this.setState({
                 redirect: true
             })
-            console.log('go!')
         }, 2000);   //splash time second * 1000
     }
 

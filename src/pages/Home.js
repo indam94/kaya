@@ -33,7 +33,7 @@ class Home extends Component {
 
   change = () =>{
     if(!this.state.isInstalled){
-      if(localStorage.getItem('type') === 'A'){
+      if(localStorage.getItem('type') == 'A'){
         localStorage.setItem('type', 'B')
       }
       else{
@@ -67,11 +67,11 @@ class Home extends Component {
     }
     
     if(!this.props.isInstalled){
-      localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
-      this.change()
+      //localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
+      //this.change()
     }
     else{
-      localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
+      //localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
     }
     console.log(this.props)
   }
