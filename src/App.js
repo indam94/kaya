@@ -106,8 +106,6 @@ export default class App extends Component {
     this.setState({
       isOpenInstruction: false
     })
-
-    console.log(this.state.isOpenInstruction)
   }
 
   addCount = () => {
@@ -139,8 +137,7 @@ export default class App extends Component {
     return (
       <div className='device_container'>
         <div className = "instruction">
-          <button onClick={this.handleOpen}
-          >
+          <button onClick={this.handleOpen}>
             <img src={questionMark} alt = "instruct"/>
           </button>
         </div>

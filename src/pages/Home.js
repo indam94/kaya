@@ -33,7 +33,7 @@ class Home extends Component {
 
   change = () =>{
     if(!this.state.isInstalled){
-      if(localStorage.getItem('type') == 'A'){
+      if(localStorage.getItem('type') === 'A'){
         localStorage.setItem('type', 'B')
       }
       else{

@@ -15,33 +15,32 @@ export default class Graphs extends Component {
         super(props)
         this.state = {
             cur: moment(),
-            isOpen: true,
+            isOpen: false,
         }
         localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
     }
 
-    componentDidMount(){
-        localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
-    }
-
     currentDay = (sub) => {
-        //console.log(this.state.cur.subtract(0, 'days').format("DD"))
         return this.state.cur.add(sub, 'days').format("DD");
     }
 
     handleOpen = () => {
         this.setState({
             isOpen:true
-        })
-        console.log("Open")
+        }, console.log(this.state.isOpen))
     };
+
+    handleClose = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
 
     render() {
         return (
             <>
             <div className = "instruction">
-            <button onClick={this.handleOpen}
-            >
+            <button onClick={this.handleOpen}>
                 <img src={questionMark} alt = "instruct"/>
             </button>
             </div>
@@ -128,10 +127,16 @@ export default class Graphs extends Component {
                 </Link>
                 </div>
                 
-                <InstructModal isOpen={this.state.isOpen}/>
+                
                 <br/>
                 <br/>
+
             </div>
+            <InstructModal 
+                isOpen={true}
+                handleOpen={this.handleOpen}
+                handleClose={this.handleClose}
+                />
             </>
         )
     }
