@@ -68,14 +68,6 @@ class Home extends Component {
       this.callApi();
       console.log("Request UserId")
     }
-    
-    if(!this.props.isInstalled){
-      //localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
-      //this.change()
-    }
-    else{
-      //localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
-    }
     console.log(this.props)
   }
 

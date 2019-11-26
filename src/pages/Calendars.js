@@ -21,6 +21,8 @@ export default class Calendars extends Component {
         }
     }
 
+    curCalender = null;
+
     componentDidMount(){
         if(!this.state.isAfter){
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
@@ -38,6 +40,7 @@ export default class Calendars extends Component {
             }
             
         }
+        window.scrollTo(this.curCalender)
     }
 
     render() {
@@ -46,7 +49,8 @@ export default class Calendars extends Component {
                 {this.state.showProgress ? <Progress/> : null}
                 
                 <Calendar dateContext={this.state.pre} isAfter={this.state.isAfter} />
-                <Calendar dateContext={this.state.cur} isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/>
+                <Calendar   ref = {ref => {this.curCalender = ref}}
+                            dateContext={this.state.cur} isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/>
                 <Calendar dateContext={this.state.fut} isAfter={this.state.isAfter} />
                 <InstructModal isOpen={true}/>
             </div>
