@@ -34,7 +34,7 @@ export default class Calendars extends Component {
                     this.setState({
                         showProgress: false
                     })
-                }, 5000);   //splash time second * 1000
+                }, 3000);   //splash time second * 1000
             }
             
         }

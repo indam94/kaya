@@ -29,6 +29,8 @@ class Home extends Component {
     else{
       localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
     }
+
+    console.log(this.state.type)
   }
 
   change = () =>{
@@ -46,7 +48,7 @@ class Home extends Component {
   //  test server call
   callApi = () => {
     if(this.props.count === 0){
-      fetch("https://kayas.herokuapp.com/api/consent")
+      fetch("https://kayas.herokuapp.com/api/consent1")
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -61,9 +63,10 @@ class Home extends Component {
   }
 
   componentDidMount(){
+    
     if(localStorage.getItem('userId') === null){
+      this.callApi();
       console.log("Request UserId")
-      //this.callApi();
     }
     
     if(!this.props.isInstalled){

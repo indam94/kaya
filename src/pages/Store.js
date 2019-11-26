@@ -22,7 +22,7 @@ class AppStore extends Component{
         this.state = {
             type : localStorage.getItem('type') || 'B',
         }
-        console.log(this.props)
+        console.log(this.state.type)
         localStorage.setItem('Information', "Please, read the whole description and install the app.")
         this.install = this.install.bind(this)
     }

@@ -14,17 +14,23 @@ function Description(props) {
         checkedAgree: false
     })
 
+    const [isChecked, setIsChecked] = React.useState({
+        isChecked: true
+    })
+
     const handleChange = event => {
         if (event.target.value === "I agree") {
             setChecked({checkedAgree:true})
-        }else{
+        }else if (event.target.value === "I disagree"){
             setChecked({checkedAgree:false})
         }
+        setIsChecked(false)
     };
 
     useEffect(() => {
         localStorage.setItem('Information', "Please Read All Description And Check Agree Or Disagress")
         localStorage.removeItem('type')
+        //console.log(typeof Boolean(isChecked));
     })
 
     return (
@@ -63,7 +69,7 @@ function Description(props) {
             
             <FormGroup>
                 <RadioGroup 
-                    defaultValue="I disagree" 
+                    defaultValue="" 
                     aria-label="agreement" 
                     name="customized-radios"
                     onChange={handleChange}
@@ -81,7 +87,8 @@ function Description(props) {
                 {/* ('Please Enter Your ID & Password') */}
                 <CustomButton   className="mb-2" 
                                 variant="contained" 
-                                color="primary" 
+                                color="primary"
+                                disabled = {Boolean(isChecked)}
                 >
                     START
                 </CustomButton>
@@ -91,7 +98,8 @@ function Description(props) {
                                 
                 <CustomButton   className="mb-2" 
                                 variant="contained" 
-                                color="primary" 
+                                color="primary"
+                                disabled = {Boolean(isChecked)}
                 >
                     START
                 </CustomButton>
