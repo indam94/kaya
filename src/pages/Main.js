@@ -37,6 +37,7 @@ export default class Main extends Component {
                         textColor="secondary"
                         value={this.state.value}
                         onChange={this.handleChange}
+                        className = "main-nav-bar"
                 >
                     <Tab label="Calendar">
                     </Tab>

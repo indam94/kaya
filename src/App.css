@@ -150,3 +150,9 @@
 
     z-index: 11;
 }
+
+.main-nav-bar{
+    background: #D3E6FF;
+    position: sticky;
+    top: 0;
+}
