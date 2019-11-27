@@ -19,11 +19,14 @@ export default class Calendars extends Component {
         }else{
             localStorage.setItem('Information', "Please, access the graph screen")
         }
+        this.myRef = React.createRef();
     }
 
-    curCalender = null;
+    scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
 
     componentDidMount(){
+        console.log(this.myRef.current.offsetTop)
+        this.scrollToRef()
         if(!this.state.isAfter){
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
         }else{
@@ -40,7 +43,8 @@ export default class Calendars extends Component {
             }
             
         }
-        window.scrollTo(this.curCalender)
+        
+        
     }
 
     render() {
@@ -49,11 +53,16 @@ export default class Calendars extends Component {
                 {this.state.showProgress ? <Progress/> : null}
                 
                 <Calendar dateContext={this.state.pre} isAfter={this.state.isAfter} />
-                <Calendar   ref = {ref => {this.curCalender = ref}}
+                <div ref = {this.myRef}>
+                <Calendar
                             dateContext={this.state.cur} isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/>
+                
+                </div>
                 <Calendar dateContext={this.state.fut} isAfter={this.state.isAfter} />
                 <InstructModal isOpen={true}/>
             </div>
         )
     }
+    
+    
 }
