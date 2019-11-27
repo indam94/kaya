@@ -146,7 +146,8 @@ export default class App extends Component {
           isOpen={this.state.isOpenInstruction}
           handleOpen={this.handleOpen}
           handleClose={this.handleClose}
-          /> : null
+          /> 
+          : null
         }
         
         <Route  exact path = "/" 

@@ -31,8 +31,7 @@ export default function SimpleModal(props) {
   const [open, setOpen] = React.useState(props.isOpen);
   const handleClose = () => {
     setOpen(false);
-    
-    // props.handleClose()
+    console.log(props)
   };
 
 

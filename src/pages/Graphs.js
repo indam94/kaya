@@ -4,10 +4,12 @@ import Chart2 from '../resources/chart2.png'
 import Button from '@material-ui/core/Button';
 import SurveyIcon from '@material-ui/icons/Assignment'
 import {Link} from 'react-router-dom'
-import InstructModal from '../components/Modal'
+// import InstructModal from '../components/Modal'
+import Modal from '@material-ui/core/Modal';
 import moment from 'moment'
 
 import questionMark from '../resources/question_mark.png'
+
 
 export default class Graphs extends Component {
 
@@ -15,8 +17,9 @@ export default class Graphs extends Component {
         super(props)
         this.state = {
             cur: moment(),
-            isOpen: false,
+            isOpen: true,
         }
+        this.handleOpen = this.handleOpen.bind(this)
         localStorage.setItem('Information',"This is the graph screen. Please, analyze the graph and then press the [Survey] button. Pay special attention to temperature and other displayed data, particularly the fertile window.")
     }
 
@@ -33,7 +36,7 @@ export default class Graphs extends Component {
     handleClose = () => {
         this.setState({
             isOpen: false
-        })
+        }, console.log(this.state.isOpen))
     }
 
     render() {
@@ -44,6 +47,35 @@ export default class Graphs extends Component {
                 <img src={questionMark} alt = "instruct"/>
             </button>
             </div>
+
+            <Modal 
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={this.state.isOpen}
+            onClose={this.handleClose}>
+            <div className="paper">
+                <div style={
+                    {
+                        position: 'absolute',
+                        width: 320,
+                        top:"50%",
+                        left:"50%",
+                        transform:"translate(-50%, -50%)",
+                        backgroundColor: 'white',
+                        border: '2px solid #000',
+                        padding: '1rem'
+                    }
+                    }>
+                    <h2 id="simple-modal-title">Information</h2>
+                    <p id="simple-modal-description">
+                    {localStorage.getItem('Information')}
+                    </p>
+                    <button onClick = {this.handleClose}>Close</button>
+                </div>
+                </div>
+            
+            </Modal>
+            
             <div className = "graph_background">
                 <p style={{
                     fontSize: "1.2rem",
@@ -132,11 +164,6 @@ export default class Graphs extends Component {
                 <br/>
 
             </div>
-            <InstructModal 
-                isOpen={true}
-                handleOpen={this.handleOpen}
-                handleClose={this.handleClose}
-                />
             </>
         )
     }

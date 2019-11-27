@@ -25,12 +25,11 @@ export default class Calendars extends Component {
     scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
 
     componentDidMount(){
-        console.log(this.myRef.current.offsetTop)
         this.scrollToRef()
         if(!this.state.isAfter){
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
         }else{
-            localStorage.setItem('Information', "Please, access the graph screen")
+            localStorage.setItem('Information', "Please, access the Chart screen")
             if(localStorage.getItem('type') === 'A'){
                 this.setState({
                     showProgress: true
