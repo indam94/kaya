@@ -4,9 +4,10 @@ import './AppStore.css';
 import Install from '@material-ui/core/Button';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
+//Preview Image Path
 import Preview1 from '../resources/app_store_page.png';
 import Preview2 from '../resources/app_store_page.png'
-
+//Logo Icon image
 import KAYAIcon from '../resources/logo.png';
 import KAYAIconC from '../resources/control_ver_logo.png'
 
@@ -27,12 +28,15 @@ class AppStore extends Component{
         this.install = this.install.bind(this)
     }
 
+    //Install Kaya(make Kaya Icon on background)
     install(){
         //console.log(this.props)
         this.props.handleInstall();
     }
 
     componentDidMount(){
+        // This is information modal text
+        // You can edit this screen modal
         localStorage.setItem('Information', "Please, read the whole description and install the app.")
     }
 
@@ -41,20 +45,24 @@ class AppStore extends Component{
         <section className="background_app_store">
             {/* First Section */}
             <article className="simple_info">
+            {/* Logo Image */}
             <div className="Logo">
                 {this.state.type === 'A'? <img src={KAYAIcon} alt="logo"/> : <img src={KAYAIconC} alt="logo"/>}
                 
             </div>
+            {/* App name */}
             <div className="AppName">
                 <div className="AppName_Inside">
                     <h4>KAYA</h4>
                 </div>
             </div>
+            {/* Company Name */}
             <div className="CompanyName">
                 <div className="CompanyName_Inside">
                     <p>UCI</p>
                 </div>
             </div>
+            {/* Install Button */}
             <div className="InstallButton">
                 {/* <button onClick={()=>{this.props.handler('Click the KAYA application.')}}> */}
                 <Link   to = "/ios_backgroud" 
@@ -73,9 +81,8 @@ class AppStore extends Component{
                     >GET
                 </Install >
                 </Link>
-                
-                {/* </button> */}
             </div>
+            {/* Other Button */}
             <div className="BlankNull"></div>
             <div className="OtherButton">
                 <button style={{
@@ -117,7 +124,10 @@ class AppStore extends Component{
                     height: 0.5,
                 }}
             />
+            {/* This is description part of App */}
             <h4>Description</h4>
+            {/* You can change Text for Here about Description */}
+            {/* A : Experiment Type */}
             {this.state.type === 'A'? 
             <div>
                 Your body is unique and now so is your app. 
@@ -138,6 +148,7 @@ class AppStore extends Component{
                 <li>Detailed temperature graph to watch for changes.</li>
             </div>
             : 
+            // B : Control Type
             <div>
                 Your body is unique and now so is your app. 
                 Get personalized fertility recommendations straight to your phone. 
@@ -159,7 +170,7 @@ class AppStore extends Component{
             }
         </section>
         <InstructModal 
-          isOpen={true}
+            isOpen={true}
         />
         </section>
         )

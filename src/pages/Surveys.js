@@ -11,7 +11,7 @@ const QUESTION_TYPE = {
 const questionList = [
     {
         surveyId : 0,
-        type : QUESTION_TYPE.TEXT,
+        type : QUESTION_TYPE.SINGLE,
         title : 'How accurate do you think the predictions of such an app can be?',
         data : [
             'Very inaccurate', 'Inaccurate', 'Neutral', 'Accurate', 'Very accurate'

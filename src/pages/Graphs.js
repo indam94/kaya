@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+// if you want to change chart
+// First, you put new image for chart to resource folder
+// Second, you have to change below code for new image name
 import Chart from '../resources/chartSample.png'
 import Chart2 from '../resources/chart2.png'
 import Button from '@material-ui/core/Button';
@@ -93,6 +96,7 @@ export default class Graphs extends Component {
                         marginBottom:"0.6rem"
                     }}
                 />
+                {/* This row is Chart Image */}
                 <img src={Chart} width="100%" alt="main_charts"></img>
                 <table
                     style={{

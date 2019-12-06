@@ -43,7 +43,11 @@ export default class Main extends Component {
                     </Tab>
                     {this.state.isAfter ? <Tab label="Chart"/> : <Tab label="Chart" disabled/>}
                 </Tabs>
-                {this.state.value === 0 ? <Calendars isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/> : <Graphs/>}
+                
+                {this.state.value === 0 ? 
+                <Calendars isAfter={this.state.isAfter} handleAfter={this.props.handleAfter}/> : 
+                <Graphs/>
+                }
             </div>
         )
     }
