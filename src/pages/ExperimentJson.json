@@ -1,0 +1,169 @@
+[
+  {
+    "surveyId": 100,
+    "surveyType": "single",
+    "question": "How likely would you be to use this or a similar app to try to conceive a child?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 101,
+    "surveyType": "single",
+    "question": "How likely would you be to use this or a similar app as your only birth control method?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 102,
+    "surveyType": "text",
+    "question": "In your opinion, how does the app generate the predictions for period days, ovulation, fertile window?"
+  },
+  {
+    "surveyId": 103,
+    "surveyType": "text",
+    "question": "What indicators do you think this app uses to predict period days, ovulation, fertile window?"
+  },
+  {
+    "surveyId": 104,
+    "surveyType": "text",
+    "question": "The app store page you analyzed mentioned Kaya offer \"personalized fertility recommendations.\" In your opinion, what does it mean?"
+  },
+  {
+    "surveyId": 105,
+    "surveyType": "text",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you track mood?"
+  },
+  {
+    "surveyId": 106,
+    "surveyType": "text",
+    "question": "What do you think \"Powered by AI\" means?"
+  },
+  {
+    "surveyId": 107,
+    "surveyType": "text",
+    "question": "What do you think Kaya is doing when you see the message \"KAYA is using your information to get smarter\"?"
+  },
+  {
+    "surveyId": 108,
+    "surveyType": "single",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you be to track:[Ovulation predictor kit's results?]",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 109,
+    "surveyType": "single",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you be to track:[Temperature]",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 110,
+    "surveyType": "single",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you be to track:[Cervical Mucus]",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 111,
+    "surveyType": "single",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you be to track:[Symptoms]",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 112,
+    "surveyType": "single",
+    "question": "If you learn that the app uses only your period dates to predict your fertile window, how likely would you be to track:[Mood]",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 113,
+    "surveyType": "text",
+    "question": "Please let us know what aspects you considered to make these choices"
+  },
+  {
+    "surveyId": 114,
+    "surveyType": "single",
+    "question": "Please let us know what aspects you considered to make these choices",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 115,
+    "surveyType": "text",
+    "question": "Why?"
+  },
+  {
+    "surveyId": 116,
+    "surveyType": "text",
+    "question": "What do you think about the calendar visualization?"
+  },
+  {
+    "surveyId": 117,
+    "surveyType": "single",
+    "question": "If you are trying to avoid conception, and your fertile window starts on the 22nd (as in the image), how likely would you be to have intercourse without another form of contraception on the 21th?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 118,
+    "surveyType": "text",
+    "question": "Why?"
+  },
+  {
+    "surveyId": 119,
+    "surveyType": "text",
+    "question": "What do you think about the graph visualization?"
+  },
+  {
+    "surveyId": 120,
+    "surveyType": "single",
+    "question": "How likely would you be to use the graph visualization?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 121,
+    "surveyType": "single",
+    "question": "How often would you use the graph visualization?",
+    "answer": [
+        "Very rarely", "Rarely", "Neutral", "Often", "Very often"
+    ]
+  },
+  {
+    "surveyId": 122,
+    "surveyType": "single",
+    "question": "How accurate do you think the predictions (i.e., period days, ovulation, fertile window) of such an app can be?",
+    "answer": [
+        "Very inaccurate", "Inaccurate", "Neutral", "Accurate", "Very accurate"
+    ]
+  },
+  {
+    "surveyId": 123,
+    "surveyType": "single",
+    "question": "In general, how likely would you trust this app for trying to conceive?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  },
+  {
+    "surveyId": 124,
+    "surveyType": "single",
+    "question": "In general, how likely would you trust this app for birth control?",
+    "answer": [
+        "Very unlikely", "Unlikely", "Neutral", "Likely", "Very likely"
+    ]
+  }
+]

@@ -6,6 +6,7 @@ import Calendar from '../resources/Calendar Official.png'
 import IconButton from '../components/IconButton'
 import {Link} from 'react-router-dom'
 import Kaya from '../resources/logo.png';
+import KayaC from '../resources/control_ver_logo.png'
 import InstructModal from '../components/Modal'
 
 function getRandomType(){
@@ -46,27 +47,31 @@ class Home extends Component {
   }
 
   //  test server call
-  callApi = () => {
+  callApi = async () => {
     if(this.props.count === 0){
-      fetch("https://kayas.herokuapp.com/api/consent1")
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-        data: json.title
-        })
-        console.log(json)
-        localStorage.setItem('userId',json['message'])
-      })
+      const response = await fetch("https://kayas.herokuapp.com/api/consent1");
+      // const response = await fetch("https://kayas.herokuapp.com/api/requestSurvey/control");
+      if (response.status !== 200) {
+        console.error(`Response from ${response.url} is failed with ${response.status}`);
+        return response;
+      }
+      const jsonResponse = await response.json();
+      console.log(jsonResponse['usercode'])
+      this.setState({
+        data: jsonResponse['usercode']
+      });
+      localStorage.setItem('userId', jsonResponse['usercode']);
+      return response;
     }
-    
-
+  
   }
 
-  componentDidMount(){
+  componentDidMount = async () => {
     
     if(localStorage.getItem('userId') === null){
-      this.callApi();
+      const response = await this.callApi();
       console.log("Request UserId")
+      console.log(response)
     }
     console.log(this.props)
   }
@@ -93,10 +98,17 @@ class Home extends Component {
       {/* Sample Icon3 */}
       {/* <IconButton img={Settings} name="Settings"></IconButton> */}
       {this.props.isInstalled ? 
+        this.state.type === 'A' ?
         <Link to="/splash" 
               className = 'icon'
         >
           <IconButton img={Kaya} style={{margin:"10px"}} name="KAYA" /> 
+        </Link>
+        :
+        <Link to="/splash" 
+              className = 'icon'
+        >
+          <IconButton img={KayaC} style={{margin:"10px"}} name="KAYA" /> 
         </Link>
         : 
         <div/>

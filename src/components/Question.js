@@ -7,19 +7,19 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 
-export const QuestionType = {
-    SINGLE: "single", // string[]
-    MULTI: "multi",   // string[] 
-    TEXT: "text",     // undefined
-    BUNDLE_SINGLE: "bundle_single", // string[][]
-};
+// export const QuestionType = {
+//     SINGLE: "single", // string[]
+//     MULTI: "multi",   // string[] 
+//     TEXT: "text",     // undefined
+//     BUNDLE_SINGLE: "bundle_single", // string[][]
+// };
 
 export default class Question {
-    constructor(surveyId, type, title, data) {
+    constructor(surveyId, surveyType, question, answer) {
         this.id = surveyId; // number
-        this.type = type; // number (QuestionType)
-        this.title = title; // string
-        this.data = data; // any
+        this.type = surveyType; // number (QuestionType)
+        this.title = question; // string
+        this.data = answer; // any
     }
 
     // Generate Question[] by given dataset.
@@ -27,21 +27,21 @@ export default class Question {
         const result = [];
 
         for (var rawObject of questionList) {
-            const question = new Question(
+            const questionObj = new Question(
                 rawObject.surveyId,
-                rawObject.type,
-                rawObject.title,
-                rawObject.data
+                rawObject.surveyType,
+                rawObject.question,
+                rawObject.answer
             );
-            result.push(question);
+            result.push(questionObj);
         }
 
         return result;
     }
 
-    toJSX(onSelect) {
+    toJSX(onSelect, index) {
         return (
-            <div className="question" id={"question_" + this.id}>
+            <div key={index} style={{marginBottom: "40px"}} className="question" id={"question_" + this.id}>
                 <div className="question-title">
                     <h3> {this.id}. {this.title} </h3>
                 </div>
@@ -53,13 +53,14 @@ export default class Question {
         )
     }
 
-    makeRadio = () => {
+    makeRadio = (onSelect) => {
         let answers = this.data.map((answer)=>{
             return(<FormControlLabel 
                 key={answer}
                 value={answer} 
                 control={<Radio />} 
                 label={answer}
+                onChange={onSelect(this.id, answer)}
             />)
         })
         return answers
@@ -80,21 +81,21 @@ export default class Question {
     }
 
     getForm(onSelect) {
-        console.log(this.type)
+        // console.log(this.type)
         // onSelect(this.id, "Hello from " + this.id);
         //return <div> Hello from {this.id} </div>;
         switch (this.type) {
-            case 0:{
+            case "single":{
                 return (
                     <FormControl>
                         <RadioGroup>
-                            {this.makeRadio()}
+                            {this.makeRadio(onSelect)}
                         </RadioGroup>
                     </FormControl>
                     )
             }
             
-            case 1:{
+            case "double":{
                 return (
                     <FormControl>
                         <FormGroup>
@@ -104,7 +105,7 @@ export default class Question {
                 )
             }
 
-            case 2:
+            case "text":
 
                 return(<TextField
                     id="outlined-multiline-static"
@@ -115,9 +116,6 @@ export default class Question {
                     margin="normal"
                     variant="outlined"
                 />)
-            case QuestionType.BUNDLE_SINGLE:
-
-            break;
             default:
                 return(<div>Error Question</div>)
         }

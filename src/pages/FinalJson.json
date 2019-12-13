@@ -1,0 +1,39 @@
+[
+    {
+        "surveyId": 200,
+        "surveyType": "single",
+        "question": "How familiar are you with fertility or period tracking apps?",
+        "answer": [
+            "Very unfamiliar", "Unfamiliar", "Neutral", "Familiar", "Very familiar"
+        ]
+    },
+    {
+        "surveyId": 201,
+        "surveyType": "single",
+        "question": "Have you ever used a fertility or period tracking app?",
+        "answer": [
+            "No", "Yes"
+        ]
+    },
+    {
+        "surveyId": 202,
+        "surveyType": "text",
+        "question": "[IF YES] For how long?"
+    },
+    {
+        "surveyId": 203,
+        "surveyType": "single",
+        "question": "[IF YES] What was your goal?",
+        "answer" : [
+            "Track periods", "Avoid conception", "Try to conceive", "Other. Specify"
+        ]
+    },
+    {
+        "surveyId": 204,
+        "surveyType": "single",
+        "question": "[IF YES] What was your goal?",
+        "answer" : [
+            "Track periods", "Avoid conception", "Try to conceive", "Other. Specify"
+        ]
+    }
+]

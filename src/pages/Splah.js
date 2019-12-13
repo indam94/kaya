@@ -11,6 +11,7 @@ class Splash extends Component{
     }
 
     componentDidMount(){
+        console.log(this.props.type)
         localStorage.setItem('Information',"Splashing...")
         setTimeout(() => {
             this.setState({
@@ -25,7 +26,7 @@ class Splash extends Component{
         }
         return(
             <div className='splash_img'>
-                {this.props.type === 'A' ? 
+                {localStorage.getItem('type') === 'A' ? 
                     <img src={SplashImage} alt="splash img"/> : 
                     <img src={SplashImageC} alt="splash img"/>
                 }
