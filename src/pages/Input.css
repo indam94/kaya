@@ -1,0 +1,144 @@
+.input_screen img {
+  width: 35px;
+  height: 35px;
+}
+
+.input_screen{
+  background: #D3E6FF;
+  height: 100%;
+  width:100%;
+}
+
+@media screen and (min-width: 320px) {
+  .positive {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .positive {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 20px;
+    justify-items: center;
+    vertical-align: bottom;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .temperature {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    vertical-align: bottom;
+  }
+}
+@media screen and (min-width: 320px) {
+  .temperature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    vertical-align: bottom;
+  }
+}
+
+.flowattributes {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 500px) {
+  .flow {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+.tempdiv {
+  margin-bottom: 1000;
+  width: 70%;
+  padding: 10px;
+}
+input {
+  text-align: center;
+}
+
+p.temptext {
+  text-align: center;
+}
+
+.temp {
+  margin: auto;
+  display: block;
+}
+
+.input_title {
+  height: 30px;
+  margin-top: 40px;
+  background: linear-gradient(
+    90deg,
+    rgba(105, 121, 248, 0.86) 30.1%,
+    rgba(247, 99, 123, 0.86) 76.46%
+  );
+  border-radius: 12px 12px 0px 0px;
+}
+.input_title_2 {
+  height: 30px;
+  background: rgb(255, 255, 255);
+  border-radius: 12px 12px 0px 0px;
+}
+
+.input_content {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.input_content_2 {
+  color: #56569d;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: normal;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.imgprop {
+  text-align: center;
+}
+
+.columns-container {
+  display: table-cell;
+  height: 100%;
+  width: 600px;
+  text-align: center;
+}
+
+.input_screen img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: auto;
+}
+
+th {
+  text-align: center;
+}
+
+font {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+table {
+  width: 140%;
+}
