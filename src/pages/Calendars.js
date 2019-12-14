@@ -17,7 +17,7 @@ export default class Calendars extends Component {
         if(!this.state.isAfter){
             localStorage.setItem('Information', "This is the calendar screen. Please, click on today's date.")
         }else{
-            localStorage.setItem('Information', "Please, access the graph screen")
+            localStorage.setItem('Information', "Please, access the Chart screen")
         }
         this.myRef = React.createRef();
     }

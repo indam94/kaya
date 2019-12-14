@@ -5,68 +5,15 @@ import {Link} from 'react-router-dom'
 import QuestionListE from './ExperimentJson.json'
 import QuestionListC from './ControlJson.json'
 
-const questionList = QuestionListE
+const questionListE = QuestionListE
 const questionListC = QuestionListC
-// [
-//     {
-//         surveyId : 0,
-//         surveyType : "single",
-//         question : 'How accurate do you think the predictions of such an app can be?',
-//         answer : [
-//             'Very inaccurate', 'Inaccurate', 'Neutral', 'Accurate', 'Very accurate'
-//         ]
-//     },
-//     {
-//         surveyId : 1,
-//         type : QUESTION_TYPE.DOUBLE,
-//         title : 'In general, how likely would you trust this app?',
-//         data : [
-//             'Very inaccurate', 'Inaccurate'
-//         ]
-//     },
-//     {
-//         surveyId : 2,
-//         type : QUESTION_TYPE.TEXT,
-//         title : 'If you learn that the app uses only your period dates to predict your fertile window how likely would you track temperature?'
-//     },
-//     {
-//         surveyId : 3,
-//         type : QUESTION_TYPE.CUSTOM,
-//         title : 'If you learn that the app uses only your period dates to predict your fertile window, how likely would you track ver cervical mucus?'
-//     },
-//     {
-//         surveyId : 4,
-//         type : QUESTION_TYPE.TEXT,
-//         title : 'If you learn that the app uses only your period dates to predict your fertile window, how likely would you track symptoms?'
-//     },
-//     {
-//         surveyId : 5,
-//         type : QUESTION_TYPE.SINGLE,
-//         title : 'If you learn that the app uses only your period dates to predict your fertile window, how likely would you track mood?'
-//     },
-//     {
-//         surveyId : 6,
-//         type : QUESTION_TYPE.SINGLE,
-//         title : 'How do you think this app calculates the predictions (i.e., period days, ovulation, fertile window)?'
-//     },
-//     {
-//         surveyId : 7,
-//         type : QUESTION_TYPE.SINGLE,
-//         title : 'What do you think [copy the main AI sentence] means?'
-//     },
-//     {
-//         surveyId : 8,
-//         type : QUESTION_TYPE.SINGLE,
-//         title : 'What indicators do you think this app uses to calculate your predictions?'
-//     },
-// ];
 
 export default class Surveys extends Component {
 
     constructor(props){
         super(props)
-        if(localStorage.getItem('type')==='A'){
-            this.questionList = Question.fromList(questionList);
+        if(localStorage.getItem('type') === 'A'){
+            this.questionList = Question.fromList(questionListE);
         }
         else{
             this.questionList = Question.fromList(questionListC);
@@ -90,21 +37,21 @@ export default class Surveys extends Component {
         const response = await this.callApi();
         console.log(response)
     }
-
+    //request survey questions from survey
     callApi = async () => {
-        if(this.props.count === 0){
-          const response = await fetch("https://kayas.herokuapp.com/api/requestSurvey/control");
-          if (response.status !== 200) {
-            console.error(`Response from ${response.url} is failed with ${response.status}`);
-            return response;
-          }
-          const jsonResponse = await response.json();
-          console.log(jsonResponse)
 
-          return response;
+        const response = await fetch("https://kayas.herokuapp.com/api/requestSurvey/control");
+        if (response.status !== 200) {
+        console.error(`Response from ${response.url} is failed with ${response.status}`);
+        return response;
         }
-      
-      }
+        const jsonResponse = await response.json();
+        console.log(jsonResponse)
+
+        return response;
+
+    
+    }
 
     onSelect (surveyId, value) {
         // const surveyAnswer = this.state.surveyAnswer;
@@ -136,8 +83,10 @@ export default class Surveys extends Component {
     getQuestionArray = (offset, questionCount) => {
         const result = [];
         for (var i = 0; i < questionCount; i++) {
+            if((offset * questionCount) + i >= this.questionList.length){break}
             result.push((offset * questionCount) + i);
         }
+        console.log(this.state.offset)
         return result;
     }
 
@@ -154,11 +103,11 @@ export default class Surveys extends Component {
                     <Button color="primary" variant="contained" onClick={this.onPrev} style={{float: "left"}}>prev</Button> : null
                 }
                 {
-                    this.state.offset !== questionList.length/5 - 1 ? 
+                    this.state.offset !== (this.questionList.length/5) - 1 ? 
                     <Button color="primary" variant="contained" onClick={this.onNext} style={{float: "right"}}>next</Button> : null
                 }
                 {
-                    this.state.offset === questionList.length/5 - 1 ?
+                    this.state.offset === (this.questionList.length/5) - 1 ?
                     this.props.count === 0 ? 
                         <Link to = "/between">
                             <Button variant="contained" color = "secondary" onClick={()=>this.onSub()} style={{float: "right"}}>submit</Button>

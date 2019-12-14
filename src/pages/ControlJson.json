@@ -201,27 +201,27 @@
       ]
     },
     {
-      "surveyId": 22,
-      "surveyType": "single",
-      "question": "In general, how likely would you trust this app for trying to conceive?",
-      "answer": [
-        "Very unlikely",
-        "Unlikely",
-        "Neutral",
-        "Likely",
-        "Very likely"
-      ]
+        "surveyId": 22,
+        "surveyType": "single",
+        "question": "In general, how likely would you trust this app for trying to conceive?",
+        "answer": [
+            "Very unlikely",
+            "Unlikely",
+            "Neutral",
+            "Likely",
+            "Very likely"
+        ]
     },
     {
-      "surveyId": 23,
-      "surveyType": "single",
-      "question": "In general, how likely would you trust this app for birth control?",
-      "answer": [
-        "Very unlikely",
-        "Unlikely",
-        "Neutral",
-        "Likely",
-        "Very likely"
-      ]
+        "surveyId": 23,
+        "surveyType": "single",
+        "question": "In general, how likely would you trust this app for birth control?",
+        "answer": [
+            "Very unlikely",
+            "Unlikely",
+            "Neutral",
+            "Likely",
+            "Very likely"
+        ]
     }
 ]

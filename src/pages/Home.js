@@ -23,9 +23,13 @@ class Home extends Component {
       type : localStorage.getItem('type') || getRandomType()
     }
     // console.log(localStorage.getItem('type'))
+
+    if(this.props.count === 1){
+      this.change()
+    }
+
     if(!this.props.isInstalled){
       localStorage.setItem('Information', "Please access the app store by clicking on the [App Store] icon.")
-      this.change()
     }
     else{
       localStorage.setItem('Information', "Please, open the app by clicking on the Kaya icon [icon].")
