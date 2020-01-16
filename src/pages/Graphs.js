@@ -105,7 +105,8 @@ export default class Graphs extends Component {
                         marginLeft: "6%",
                         marginRight: "3%",
                         color: "#8D9AA9",
-                        fontWeight: "500"
+                        fontWeight: "500",
+                        width: "90%"
                     }}
                 ><thead><tr>
                     <td
